@@ -88,62 +88,66 @@ namespace Cantina1
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-              if (ListaCarrinho.Items.Count == 0)
-    {
-        MessageBox.Show("Adicione itens ao carrinho antes de finalizar o pedido.");
-        return;
-    }
-
-    string nome = Microsoft.VisualBasic.Interaction.InputBox("Digite seu nome:", "Identificação");
-    if (string.IsNullOrWhiteSpace(nome))
-    {
-        MessageBox.Show("Nome é obrigatório.");
-        return;
-    }
-
-    string forma = MostrarSelecaoFormaPagamento();
-    if (string.IsNullOrEmpty(forma)) return;
-
-    decimal total = CalcularTotalCarrinho();
-    decimal valorPago = 0;
-    string resumo = $"Pedido finalizado!\nCliente: {nome}\nForma de pagamento: {forma}\nTotal: R$ {total:F2}";
-
-    if (forma == "Dinheiro")
-    {
-        while (true)
-        {
-            string entrada = Microsoft.VisualBasic.Interaction.InputBox(
-                $"Total: R$ {total:F2}\nInforme o valor pago:", "Pagamento em Dinheiro");
-
-            if (string.IsNullOrWhiteSpace(entrada)) return;
-
-            if (decimal.TryParse(entrada, out valorPago))
+            if (ListaCarrinho.Items.Count == 0)
             {
-                if (valorPago >= total)
+                MessageBox.Show("Adicione itens ao carrinho antes de finalizar o pedido.");
+                return;
+            }
+
+            string nome = Microsoft.VisualBasic.Interaction.InputBox("Digite seu nome:", "Identificação");
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                MessageBox.Show("Nome é obrigatório.");
+                return;
+            }
+
+            string forma = MostrarSelecaoFormaPagamento();
+            if (string.IsNullOrEmpty(forma)) return;
+
+            decimal total = CalcularTotalCarrinho();
+            decimal valorPago = 0;
+            string resumo = $"Pedido finalizado!\nCliente: {nome}\nForma de pagamento: {forma}\nTotal: R$ {total:F2}";
+
+            if (forma == "Dinheiro")
+            {
+                while (true)
                 {
-                    decimal troco = valorPago - total;
-                    resumo += $"\nPago: R$ {valorPago:F2}\nTroco: R$ {troco:F2}";
-                    break;
-                }
-                else
-                {
-                    MessageBox.Show("Valor insuficiente. Tente novamente.");
+                    string entrada = Microsoft.VisualBasic.Interaction.InputBox(
+                        $"Total: R$ {total:F2}\nInforme o valor pago:", "Pagamento em Dinheiro");
+
+                    if (string.IsNullOrWhiteSpace(entrada)) return;
+
+                    if (decimal.TryParse(entrada, out valorPago))
+                    {
+                        if (valorPago >= total)
+                        {
+                            decimal troco = valorPago - total;
+                            resumo += $"\nPago: R$ {valorPago:F2}\nTroco: R$ {troco:F2}";
+                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Valor insuficiente. Tente novamente.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Valor inválido.");
+                    }
                 }
             }
-            else
-            {
-                MessageBox.Show("Valor inválido.");
-            }
-        }
-    }
 
-    MessageBox.Show(resumo, "Confirmação");
-    ResetarPedido();
+            MessageBox.Show(resumo, "Confirmação");
+            ResetarPedido();
+            this.Visible = true;
         }
+         
+        
         private string MostrarSelecaoFormaPagamento()
         {
             using (var f = new FormFormaPagamento())
             {
+                this.Visible = false;
                 return f.ShowDialog() == DialogResult.OK ? f.FormaSelecionada : null;
             }
         }
@@ -156,6 +160,7 @@ namespace Cantina1
         }
         private void ResetarPedido()
         {
+            carrinho.limpar();
             ListaCarrinho.Items.Clear();
             Total.Text = "Total: R$ 0,00"; 
         }
