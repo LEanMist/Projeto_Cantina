@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.VisualBasic;
 using System.Windows.Forms;
+using System;
 
 namespace Cantina1
 {
@@ -21,10 +22,11 @@ namespace Cantina1
                 MessageBox.Show("Quantidade inválida.");
                 return null;
             }
+            
+            var p = new Produtos (produtobase.Nome, produtobase.Preco, Qtd);
+            Itens.Add (p);
+            return (p);
 
-            var p = new Produtos(produtobase.Nome, produtobase.Preco, Qtd);
-            Itens.Add(p);
-            return p;
         }
 
         public bool RemoverProduto(Produtos produtoSelecionado)
@@ -65,5 +67,6 @@ namespace Cantina1
         }
        
         public double Total() => Itens.Sum(item => item.Subtotal());
+
     }
 }

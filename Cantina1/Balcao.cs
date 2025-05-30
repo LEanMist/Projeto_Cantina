@@ -25,5 +25,43 @@ namespace Cantina1
                 ListaPedidos.Items.Add(pedido);
             }
         }
+
+        private void btnConcluir_Click(object sender, EventArgs e)
+        {
+            var Pedido = ListaPedidos.SelectedItem;
+
+            if (Pedido != null)
+            {
+                ListaPedidos.Items.Remove(Pedido);
+                ListaConcluidos.Items.Add(Pedido);
+            }
+            else if (ListaPedidos.Items == null)
+            {
+                MessageBox.Show("Não a nenhum Pedido no Momento");
+            }
+            else
+            {
+                MessageBox.Show("Selecione o Item para concluir");
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            var concluidos = ListaConcluidos.SelectedItem;
+
+            if (concluidos != null)
+            {
+                ListaConcluidos.Items.Remove(concluidos);
+                ListaPedidos.Items.Add($"{concluidos.ToString()}");
+            }
+            else if (ListaConcluidos.Items == null)
+            {
+                MessageBox.Show("Deve haver um pedido para poder voltar seu status");
+            }
+            else
+            {
+                MessageBox.Show("Selecione o Item para voltar seu status");
+            }
+        }
     }
 }

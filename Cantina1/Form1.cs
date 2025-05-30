@@ -137,7 +137,7 @@ namespace Cantina1
                 }
             }
 
-            var pedido = new Pedido(nome, forma, carrinho.Itens);
+            var pedido = new Pedido(nome, carrinho.Itens);
             BancoPedidos.Pedidos.Add(pedido);
 
             MessageBox.Show(resumo, "Confirmação");
@@ -167,12 +167,6 @@ namespace Cantina1
             ListaCarrinho.Items.Clear();
             Total.Text = "Total: R$ 0,00"; 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             using (var f = new Balcao())
