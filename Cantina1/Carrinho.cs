@@ -58,12 +58,7 @@ namespace Cantina1
                 return false; 
                 
             }
-        }
-        public void limpar()
-        {
-            Itens.Clear();
-        }
-       
+        }  
         public double Total() => Itens.Sum(item => item.Subtotal());
     }
 }
