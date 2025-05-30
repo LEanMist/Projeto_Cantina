@@ -30,3 +30,15 @@ C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\Cantina1\obj\Debug\C
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.csproj.CoreCompileInputs.cache
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.exe
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.pdb
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\bin\Debug\Cantina1.exe.config
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\bin\Debug\Cantina1.exe
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\bin\Debug\Cantina1.pdb
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.Balcao.resources
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.Form1.resources
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.FormFormaPagamento.resources
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.Properties.Resources.resources
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.csproj.GenerateResource.cache
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.exe
+C:\Users\user\Downloads\Projeto_Cantina\Cantina1\obj\Debug\Cantina1.pdb
