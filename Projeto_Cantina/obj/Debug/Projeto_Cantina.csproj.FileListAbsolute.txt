@@ -1,0 +1,10 @@
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\bin\Debug\Projeto_Cantina.exe.config
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\bin\Debug\Projeto_Cantina.exe
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\bin\Debug\Projeto_Cantina.pdb
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Form1.resources
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Properties.Resources.resources
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.exe
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.pdb
