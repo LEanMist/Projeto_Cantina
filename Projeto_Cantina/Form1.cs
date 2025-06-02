@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Projeto_Cantina
 {
@@ -83,6 +84,59 @@ namespace Projeto_Cantina
             bool removido = carrinho.RemoverItem(selecionado);
             CarregarCarrinho();
             AtualizarTotal();
+        }
+
+        private void ResetarPedido()
+        {
+            carrinho.Limpar();
+            ListaCarrinho.Items.Clear();
+            Total.Text = "Total: R$ 0,00";
+        }
+
+        private string MostrarFormaPagamento()
+        {
+            using (var f = new Forma_de_Pagamento())
+            {
+
+                f.ItensFinalizados = carrinho.Items
+                                             .Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade))
+                                             .ToList();
+                f.TotalGeral = (decimal)carrinho.Total();
+
+
+                this.Visible = false;
+                var resultado = f.ShowDialog(this);
+                this.Visible = true;
+
+                return resultado == DialogResult.OK ? f.FormaSelecionada : null;
+            }
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            if (ListaCarrinho.Items.Count == 0)
+            {
+                MessageBox.Show("Adicione itens ao carrinho antes de finalizar o pedido.");
+                return;
+            }
+
+            string nome = Interaction.InputBox("Digite seu nome:", "Identificação");
+            if (string.IsNullOrWhiteSpace(nome)) return;
+
+            string forma = MostrarFormaPagamento();
+            if (forma == null) return;
+
+
+
+            decimal total = (decimal)carrinho.Total();
+            string resumo =
+                $"Pedido finalizado!\nCliente: {nome}\n" +
+                $"Forma de pagamento: {forma}\n" +
+                $"Total: R$ {total:F2}";
+
+            MessageBox.Show(resumo, "Confirmação");
+            ResetarPedido();
+
         }
     }
 }

@@ -18,6 +18,10 @@ namespace Projeto_Cantina
        $"Quantas unidades de '{produtobase.Nome}' deseja adicionar?",
        "Quantidade", "1");
 
+            if (string.IsNullOrWhiteSpace(input))
+                return null;
+
+
             if (!int.TryParse(input, out int qtd) || qtd <= 0)
             {
                 MessageBox.Show("Quantidade inválida.");

@@ -33,6 +33,7 @@
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.Total = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListaProdutos
@@ -81,17 +82,29 @@
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Arimo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(328, 347);
+            this.Total.Location = new System.Drawing.Point(328, 297);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(146, 30);
             this.Total.TabIndex = 9;
             this.Total.Text = "Total: R$ 0,00";
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Font = new System.Drawing.Font("Arimo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Location = new System.Drawing.Point(318, 391);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(166, 52);
+            this.btnFinalizar.TabIndex = 10;
+            this.btnFinalizar.Text = "Finalizar Pedido";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 481);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.btnAdicionar);
@@ -111,6 +124,7 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Label Total;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }
 

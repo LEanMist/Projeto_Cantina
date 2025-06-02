@@ -8,3 +8,4 @@ C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Can
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.exe
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.pdb
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Forma_de_Pagamento.resources
