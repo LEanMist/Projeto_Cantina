@@ -60,6 +60,12 @@
     <Compile Include="Forma_de_Pagamento.Designer.cs">
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="OpçoesPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpçoesPedido.Designer.cs">
+      <DependentUpon>OpçoesPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produtos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +75,9 @@
     <EmbeddedResource Include="Forma_de_Pagamento.resx">
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OpçoesPedido.resx">
+      <DependentUpon>OpçoesPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,6 +86,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -91,6 +101,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %281%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

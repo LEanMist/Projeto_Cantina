@@ -27,6 +27,7 @@ namespace Projeto_Cantina
             new Produtos("X-Tudo",            12.00),
             new Produtos("Água Mineral 500ml", 2.50)
         };
+        public string TipoPedido { get; set; } = "";
         public Form1()
         {
             InitializeComponent();
@@ -91,6 +92,19 @@ namespace Projeto_Cantina
             carrinho.Limpar();
             ListaCarrinho.Items.Clear();
             Total.Text = "Total: R$ 0,00";
+            TipoPedido = string.Empty;
+
+            var opcoes = new OpçoesPedido();
+            if (opcoes.ShowDialog() == DialogResult.OK)
+            {
+                TipoPedido = opcoes.TipoPedidoSelecionado;
+            }
+            else
+            {
+                TipoPedido = "Não informado";
+            }
+            this.Visible = true; // Reexibe a tela de vendas após resetar
+
         }
 
         private string MostrarFormaPagamento()
@@ -102,11 +116,11 @@ namespace Projeto_Cantina
                                              .Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade))
                                              .ToList();
                 f.TotalGeral = (decimal)carrinho.Total();
+                f.TipoPedido = this.TipoPedido;
 
 
                 this.Visible = false;
                 var resultado = f.ShowDialog(this);
-                this.Visible = true;
 
                 return resultado == DialogResult.OK ? f.FormaSelecionada : null;
             }
@@ -132,11 +146,36 @@ namespace Projeto_Cantina
             string resumo =
                 $"Pedido finalizado!\nCliente: {nome}\n" +
                 $"Forma de pagamento: {forma}\n" +
-                $"Total: R$ {total:F2}";
+                $"Total: R$ {total:F2}\n" +
+                $"Tipo de Pedido: {TipoPedido}";
+
 
             MessageBox.Show(resumo, "Confirmação");
             ResetarPedido();
 
+
+        }
+
+        private void btnVoltarTipo_Click(object sender, EventArgs e)
+        {
+            var resposta = MessageBox.Show("Deseja voltar e escolher outro tipo de pedido?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resposta == DialogResult.Yes)
+            {
+                this.Hide(); // Esconde a tela de vendas
+
+                using (var opcoes = new OpçoesPedido())
+                {
+                    if (opcoes.ShowDialog() == DialogResult.OK)
+                    {
+                        TipoPedido = opcoes.TipoPedidoSelecionado;
+                        MessageBox.Show($"Novo tipo de pedido selecionado: {TipoPedido}", "Atualizado");
+                        // Se quiser reiniciar carrinho, resetar valores, pode fazer aqui
+                    }
+                }
+
+                this.Show(); // Reexibe a tela de vendas
+            }
         }
     }
 }

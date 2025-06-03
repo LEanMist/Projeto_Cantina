@@ -16,7 +16,14 @@ namespace Projeto_Cantina
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var opcoes = new OpçoesPedido();
+            if (opcoes.ShowDialog() == DialogResult.OK)
+            {
+                var formPrincipal = new Form1();
+                formPrincipal.TipoPedido = opcoes.TipoPedidoSelecionado;
+                Application.Run(formPrincipal);
+            }
         }
     }
 }

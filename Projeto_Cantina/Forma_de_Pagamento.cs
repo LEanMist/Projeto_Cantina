@@ -13,9 +13,16 @@ namespace Projeto_Cantina
 {
     public partial class Forma_de_Pagamento : Form
     {
+        public string TipoPedido { get; set; } = "";
+
         public Forma_de_Pagamento()
         {
             InitializeComponent();
+
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
         public List<Produtos> ItensFinalizados { get; set; }
         public decimal TotalGeral { get; set; }
@@ -92,18 +99,25 @@ namespace Projeto_Cantina
             if (ItensFinalizados != null && ItensFinalizados.Count > 0)
             {
                 Extrato.Items.Clear();
+                Extrato.Items.Add($"Tipo de Pedido: {TipoPedido}");
+                Extrato.Items.Add($"------------------------");
 
                 foreach (var item in ItensFinalizados)
                 {
                     Extrato.Items.Add($"{item.Nome}");
                     Extrato.Items.Add($"  Quantidade: {item.Quantidade}");
                     Extrato.Items.Add($"  Total: R$ {item.CalcularValorTotal():F2}");
-                    Extrato.Items.Add("");
                 }
 
                 Extrato.Items.Add($"------------------------");
                 Extrato.Items.Add($"TOTAL GERAL: R$ {TotalGeral:F2}");
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
