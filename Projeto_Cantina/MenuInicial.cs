@@ -33,5 +33,19 @@ namespace Projeto_Cantina
                 this.Show(); // Fecha o menu inicial se o usuário cancelar
             }
         }
+
+        private void btnAcessoRestrito_Click(object sender, EventArgs e)
+        {
+            this.Hide(); 
+
+            using (var balcao = new Balcão())
+            {
+                balcao.ShowDialog(); 
+            }
+
+            this.Show(); 
+
+
+        }
     }
 }

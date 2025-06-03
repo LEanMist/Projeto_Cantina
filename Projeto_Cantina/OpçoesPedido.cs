@@ -16,7 +16,9 @@ namespace Projeto_Cantina
         public OpçoesPedido()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void btnViagem_Click(object sender, EventArgs e)

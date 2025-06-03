@@ -66,6 +66,7 @@
     <Compile Include="Forma_de_Pagamento.Designer.cs">
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="GerenciadorPedidos.cs" />
     <Compile Include="MenuInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,9 +79,13 @@
     <Compile Include="OpçoesPedido.Designer.cs">
       <DependentUpon>OpçoesPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido.cs" />
     <Compile Include="Produtos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Balcão.resx">
+      <DependentUpon>Balcão.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bolt-2024.pdf %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %285%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

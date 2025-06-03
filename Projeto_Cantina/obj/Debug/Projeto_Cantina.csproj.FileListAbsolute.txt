@@ -11,3 +11,4 @@ C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Can
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Forma_de_Pagamento.resources
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.OpçoesPedido.resources
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.MenuInicial.resources
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Balcão.resources

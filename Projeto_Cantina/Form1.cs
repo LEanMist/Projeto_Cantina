@@ -32,6 +32,9 @@ namespace Projeto_Cantina
         public Form1()
         {
             InitializeComponent();
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             CarregarProdutos();
             AtualizarTotal();
         }
@@ -154,6 +157,7 @@ namespace Projeto_Cantina
 
 
             MessageBox.Show(resumo, "Confirmação");
+            GerenciadorPedidos.AdicionarPedido(nome, carrinho.Items);
             ResetarPedido();
 
 

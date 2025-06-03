@@ -113,6 +113,16 @@ namespace Projeto_Cantina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bolt_2024_pdf__5_ {
+            get {
+                object obj = ResourceManager.GetObject("Bolt-2024.pdf (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bolt_20241 {
             get {
                 object obj = ResourceManager.GetObject("Bolt-20241", resourceCulture);
