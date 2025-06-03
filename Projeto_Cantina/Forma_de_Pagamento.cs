@@ -15,6 +15,8 @@ namespace Projeto_Cantina
     {
         public string TipoPedido { get; set; } = "";
 
+        public decimal Troco { get; set; } = 0;
+
         public Forma_de_Pagamento()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace Projeto_Cantina
                     if (valorPago >= TotalGeral)
                     {
                         decimal troco = valorPago - TotalGeral;
+                        this.Troco = troco; 
 
                         FormaSelecionada = "Dinheiro";
                         this.DialogResult = DialogResult.OK;

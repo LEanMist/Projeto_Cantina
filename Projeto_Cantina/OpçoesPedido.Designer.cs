@@ -131,6 +131,7 @@
             this.btnVoltarInicio.TabIndex = 15;
             this.btnVoltarInicio.Text = "Voltar";
             this.btnVoltarInicio.UseVisualStyleBackColor = false;
+            this.btnVoltarInicio.Click += new System.EventHandler(this.btnVoltarInicio_Click);
             // 
             // OpçoesPedido
             // 

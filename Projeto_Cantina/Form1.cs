@@ -28,6 +28,7 @@ namespace Projeto_Cantina
             new Produtos("Água Mineral 500ml", 2.50)
         };
         public string TipoPedido { get; set; } = "";
+        private decimal troco = 0;
         public Form1()
         {
             InitializeComponent();
@@ -94,16 +95,7 @@ namespace Projeto_Cantina
             Total.Text = "Total: R$ 0,00";
             TipoPedido = string.Empty;
 
-            var opcoes = new OpçoesPedido();
-            if (opcoes.ShowDialog() == DialogResult.OK)
-            {
-                TipoPedido = opcoes.TipoPedidoSelecionado;
-            }
-            else
-            {
-                TipoPedido = "Não informado";
-            }
-            this.Visible = true; // Reexibe a tela de vendas após resetar
+            this.Close();
 
         }
 
@@ -122,7 +114,13 @@ namespace Projeto_Cantina
                 this.Visible = false;
                 var resultado = f.ShowDialog(this);
 
-                return resultado == DialogResult.OK ? f.FormaSelecionada : null;
+                if (resultado == DialogResult.OK)
+                {
+                    this.troco = f.Troco; 
+                    return f.FormaSelecionada;
+                }
+
+                return null;
             }
         }
 
@@ -148,6 +146,11 @@ namespace Projeto_Cantina
                 $"Forma de pagamento: {forma}\n" +
                 $"Total: R$ {total:F2}\n" +
                 $"Tipo de Pedido: {TipoPedido}";
+
+            if (forma == "Dinheiro" && troco > 0)
+            {
+                resumo += $"\nTroco: R$ {troco:F2}";
+            }
 
 
             MessageBox.Show(resumo, "Confirmação");
