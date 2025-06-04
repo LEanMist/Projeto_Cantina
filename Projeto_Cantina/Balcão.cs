@@ -24,20 +24,19 @@ namespace Projeto_Cantina
 
         private void Balcão_Load(object sender, EventArgs e)
         {
-            pedidosPendentes = new List<Pedido>(GerenciadorPedidos.PedidosConcluidos);
             AtualizarListas();
         }
 
         private void AtualizarListas()
         {
             ListaPedidos.Items.Clear();
-            foreach (var pedido in pedidosPendentes)
+            foreach (var pedido in GerenciadorPedidos.PedidosPendentes)
             {
                 ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)}");
             }
 
             ListaConcluidos.Items.Clear();
-            foreach (var pedido in pedidosConcluidos)
+            foreach (var pedido in GerenciadorPedidos.PedidosConcluidos)
             {
                 ListaConcluidos.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)}");
             }
@@ -52,15 +51,10 @@ namespace Projeto_Cantina
         private void btnConcluir_Click(object sender, EventArgs e)
         {
             int index = ListaPedidos.SelectedIndex;
-            if (index < 0)
-            {
-                MessageBox.Show("Selecione um pedido da lista de pendentes.");
-                return;
-            }
+            if (index < 0) return;
 
-            var pedido = pedidosPendentes[index];
-            pedidosPendentes.RemoveAt(index);
-            pedidosConcluidos.Add(pedido);
+            var pedido = GerenciadorPedidos.PedidosPendentes[index];
+            GerenciadorPedidos.ConcluirPedido(pedido);
 
             AtualizarListas();
         }
@@ -68,15 +62,11 @@ namespace Projeto_Cantina
         private void btnVoltarStatus_Click(object sender, EventArgs e)
         {
             int index = ListaConcluidos.SelectedIndex;
-            if (index < 0)
-            {
-                MessageBox.Show("Selecione um pedido da lista de concluídos.");
-                return;
-            }
+            if (index < 0) return;
 
-            var pedido = pedidosConcluidos[index];
-            pedidosConcluidos.RemoveAt(index);
-            pedidosPendentes.Add(pedido);
+            var pedido = GerenciadorPedidos.PedidosConcluidos[index];
+            GerenciadorPedidos.PedidosConcluidos.Remove(pedido);
+            GerenciadorPedidos.PedidosPendentes.Add(pedido);
 
             AtualizarListas();
         }
