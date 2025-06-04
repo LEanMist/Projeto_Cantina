@@ -63,6 +63,36 @@ namespace Projeto_Cantina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _600250 {
+            get {
+                object obj = ResourceManager.GetObject("600250", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6002501 {
+            get {
+                object obj = ResourceManager.GetObject("6002501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _641695 {
+            get {
+                object obj = ResourceManager.GetObject("641695", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bolt_2024_pdf {
             get {
                 object obj = ResourceManager.GetObject("Bolt-2024.pdf", resourceCulture);
@@ -136,6 +166,16 @@ namespace Projeto_Cantina.Properties {
         internal static System.Drawing.Bitmap Bolt_20242 {
             get {
                 object obj = ResourceManager.GetObject("Bolt-20242", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chefe_de_cozinha {
+            get {
+                object obj = ResourceManager.GetObject("chefe-de-cozinha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

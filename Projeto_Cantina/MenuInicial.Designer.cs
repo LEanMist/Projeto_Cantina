@@ -117,6 +117,7 @@
             this.Controls.Add(this.btnAcessoRestrito);
             this.Controls.Add(this.pictureBox2);
             this.Name = "MenuInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuInicial";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

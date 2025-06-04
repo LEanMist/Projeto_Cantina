@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnConcluir = new System.Windows.Forms.Button();
             this.btnVoltarStatus = new System.Windows.Forms.Button();
             this.ListaPedidos = new System.Windows.Forms.ListBox();
@@ -52,6 +52,16 @@
             this.panel1.Size = new System.Drawing.Size(851, 69);
             this.panel1.TabIndex = 14;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf__5_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 50);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -62,16 +72,6 @@
             this.label1.Size = new System.Drawing.Size(256, 39);
             this.label1.TabIndex = 12;
             this.label1.Text = "Balcão de Pedidos";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf__5_;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 50);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // btnConcluir
             // 
@@ -165,6 +165,7 @@
             this.Controls.Add(this.btnConcluir);
             this.Controls.Add(this.panel1);
             this.Name = "Balcão";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Balcão";
             this.Load += new System.EventHandler(this.Balcão_Load);
             this.panel1.ResumeLayout(false);

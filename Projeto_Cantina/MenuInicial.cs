@@ -38,9 +38,9 @@ namespace Projeto_Cantina
         {
             this.Hide(); 
 
-            using (var balcao = new Balcão())
+            using (var loginLoja = new LoginLoja())
             {
-                balcao.ShowDialog(); 
+                loginLoja.ShowDialog(); 
             }
 
             this.Show(); 

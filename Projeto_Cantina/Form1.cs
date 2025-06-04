@@ -112,6 +112,7 @@ namespace Projeto_Cantina
                                              .ToList();
                 f.TotalGeral = (decimal)carrinho.Total();
                 f.TipoPedido = this.TipoPedido;
+                
 
 
                 this.Visible = false;
@@ -177,7 +178,6 @@ namespace Projeto_Cantina
                     {
                         TipoPedido = opcoes.TipoPedidoSelecionado;
                         MessageBox.Show($"Novo tipo de pedido selecionado: {TipoPedido}", "Atualizado");
-                        // Se quiser reiniciar carrinho, resetar valores, pode fazer aqui
                     }
                 }
 

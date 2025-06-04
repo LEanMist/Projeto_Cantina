@@ -67,6 +67,18 @@
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="GerenciadorPedidos.cs" />
+    <Compile Include="LoginLoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginLoja.Designer.cs">
+      <DependentUpon>LoginLoja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginsAcessos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginsAcessos.Designer.cs">
+      <DependentUpon>LoginsAcessos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,12 @@
       <DependentUpon>OpçoesPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs" />
+    <Compile Include="Perfis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfis.Designer.cs">
+      <DependentUpon>Perfis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produtos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,11 +110,20 @@
     <EmbeddedResource Include="Forma_de_Pagamento.resx">
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginLoja.resx">
+      <DependentUpon>LoginLoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginsAcessos.resx">
+      <DependentUpon>LoginsAcessos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuInicial.resx">
       <DependentUpon>MenuInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpçoesPedido.resx">
       <DependentUpon>OpçoesPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfis.resx">
+      <DependentUpon>Perfis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,6 +175,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bolt-2024.pdf %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\641695.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\600250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6002501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chefe-de-cozinha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

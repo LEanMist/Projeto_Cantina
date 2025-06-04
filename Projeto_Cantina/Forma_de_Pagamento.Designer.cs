@@ -161,6 +161,7 @@
             this.Controls.Add(this.btnDinheiro);
             this.Controls.Add(this.Extrato);
             this.Name = "Forma_de_Pagamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forma_de_Pagamento";
             this.Load += new System.EventHandler(this.Forma_de_Pagamento_Load);
             this.panel1.ResumeLayout(false);

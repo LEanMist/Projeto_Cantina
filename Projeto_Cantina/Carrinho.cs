@@ -81,7 +81,6 @@ namespace Projeto_Cantina
         public void Limpar()
         {
             Items.Clear();
-            MessageBox.Show("Carrinho limpo com sucesso!");
         }
     }
 }
