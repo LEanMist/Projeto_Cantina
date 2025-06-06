@@ -145,7 +145,9 @@ namespace Projeto_Cantina
 
 
             decimal total = (decimal)carrinho.Total();
+            DateTime data = DateTime.Now;
             string resumo =
+                $"{data}\n" +
                 $"Pedido finalizado!\nCliente: {nome}\n" +
                 $"Forma de pagamento: {forma}\n" +
                 $"Total: R$ {total:F2}\n" +
@@ -155,6 +157,15 @@ namespace Projeto_Cantina
             {
                 resumo += $"\nTroco: R$ {troco:F2}";
             }
+
+            var pedido = new Pedido
+            {
+                NomeCliente = nome,
+                Produtos = carrinho.Items.Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade)).ToList(),
+                TipoPedido = this.TipoPedido,
+                DataeHora = data,
+                FormadePagamento = forma
+            };
 
 
             MessageBox.Show(resumo, "Confirmação");
@@ -177,12 +188,20 @@ namespace Projeto_Cantina
                     if (opcoes.ShowDialog() == DialogResult.OK)
                     {
                         TipoPedido = opcoes.TipoPedidoSelecionado;
+                        this.Show();
                         MessageBox.Show($"Novo tipo de pedido selecionado: {TipoPedido}", "Atualizado");
                     }
+                    else
+                    {
+                        this.Close();
+                    }
                 }
-
-                this.Show(); // Reexibe a tela de vendas
             }
+        }
+
+        private void ListaProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

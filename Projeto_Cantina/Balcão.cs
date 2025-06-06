@@ -32,7 +32,7 @@ namespace Projeto_Cantina
             ListaPedidos.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosPendentes)
             {
-                ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)}");
+                ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente}  - {ResumoProdutos(pedido)}");
             }
 
             ListaConcluidos.Items.Clear();

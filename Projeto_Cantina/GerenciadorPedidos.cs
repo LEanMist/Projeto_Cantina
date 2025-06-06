@@ -17,6 +17,7 @@ namespace Projeto_Cantina
             {
                 NomeCliente = nomeCliente,
                 Produtos = produtos.Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade)).ToList()
+                
             });
         }
         public static void ConcluirPedido(Pedido pedido)

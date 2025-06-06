@@ -13,6 +13,7 @@ namespace Projeto_Cantina
         public double Preco { get; set; }
         public int Quantidade { get; set; }
 
+
         public Produtos(string nome, double preco, int quantidade = 1)
         {
             Nome = nome;

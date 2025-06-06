@@ -44,8 +44,6 @@ namespace Projeto_Cantina
             }
 
             this.Show(); 
-
-
         }
     }
 }

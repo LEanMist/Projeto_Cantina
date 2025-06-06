@@ -11,7 +11,8 @@ namespace Projeto_Cantina
     {
         public string NomeCliente { get; set; }
         public string FormadePagamento { get; set; }
-        public DateAndTime DateAndTime { get; set; }
+        public string TipoPedido { get; set; }
+        public DateTime DataeHora{ get; set; }
         public List<Produtos> Produtos { get; set; } = new List<Produtos>();
     }
 }

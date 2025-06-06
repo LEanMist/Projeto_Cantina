@@ -15,6 +15,25 @@ namespace Projeto_Cantina
         public Perfis()
         {
             InitializeComponent();
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+        }
+
+        private void btnVoltarMenu_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnAtendente_Click(object sender, EventArgs e)
+        {
+            using (var balcao = new Balcão())
+            {
+                balcao.ShowDialog();
+            }
+
+            this.Show();
         }
     }
 }

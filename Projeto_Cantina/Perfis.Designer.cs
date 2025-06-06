@@ -49,6 +49,7 @@
             this.btnAtendente.TabIndex = 0;
             this.btnAtendente.Text = "Acesso Atendente";
             this.btnAtendente.UseVisualStyleBackColor = true;
+            this.btnAtendente.Click += new System.EventHandler(this.btnAtendente_Click);
             // 
             // btnCozinheiro
             // 
@@ -111,6 +112,7 @@
             this.btnVoltarMenu.TabIndex = 15;
             this.btnVoltarMenu.Text = "Voltar";
             this.btnVoltarMenu.UseVisualStyleBackColor = false;
+            this.btnVoltarMenu.Click += new System.EventHandler(this.btnVoltarMenu_Click);
             // 
             // Perfis
             // 

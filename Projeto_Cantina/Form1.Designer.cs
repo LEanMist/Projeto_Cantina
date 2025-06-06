@@ -35,10 +35,10 @@
             this.Total = new System.Windows.Forms.Label();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoltarTipo = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,6 +56,7 @@
             this.ListaProdutos.Name = "ListaProdutos";
             this.ListaProdutos.Size = new System.Drawing.Size(259, 142);
             this.ListaProdutos.TabIndex = 5;
+            this.ListaProdutos.SelectedIndexChanged += new System.EventHandler(this.ListaProdutos_SelectedIndexChanged);
             // 
             // ListaCarrinho
             // 
@@ -131,6 +132,16 @@
             this.panel1.Size = new System.Drawing.Size(803, 72);
             this.panel1.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(76, 45);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -165,16 +176,6 @@
             this.btnVoltarTipo.Text = "Voltar";
             this.btnVoltarTipo.UseVisualStyleBackColor = false;
             this.btnVoltarTipo.Click += new System.EventHandler(this.btnVoltarTipo_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(76, 45);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 

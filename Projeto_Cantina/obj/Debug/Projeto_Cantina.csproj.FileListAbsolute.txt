@@ -28,3 +28,4 @@ C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Ca
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.pdb
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.LoginLoja.resources
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Perfis.resources
+C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.LoginsAcessos.resources

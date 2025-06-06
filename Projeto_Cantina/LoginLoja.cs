@@ -15,6 +15,9 @@ namespace Projeto_Cantina
         public LoginLoja()
         {
             InitializeComponent();
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void btnVoltarMenu_Click(object sender, EventArgs e)
@@ -29,10 +32,10 @@ namespace Projeto_Cantina
             {
                 if (txtLogin.Text.Equals("admin") && txtSenha.Text.Equals("123"))
                 {
-                    this.Close();
-
                     var perfis = new Perfis();
                     perfis.ShowDialog();
+                    this.Close();
+
                 }
                 else
                 {
