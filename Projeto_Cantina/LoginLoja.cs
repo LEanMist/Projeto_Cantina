@@ -32,10 +32,10 @@ namespace Projeto_Cantina
             {
                 if (txtLogin.Text.Equals("admin") && txtSenha.Text.Equals("123"))
                 {
+                    this.Hide();
                     var perfis = new Perfis();
                     perfis.ShowDialog();
                     this.Close();
-
                 }
                 else
                 {

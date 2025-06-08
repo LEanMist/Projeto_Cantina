@@ -28,12 +28,51 @@ namespace Projeto_Cantina
 
         private void btnAtendente_Click(object sender, EventArgs e)
         {
-            using (var balcao = new Balcão())
+            this.Hide();
+            var loginsAcessos = new LoginsAcessos();
+            loginsAcessos.PerfilSelecionado = "Atendente";
+            if (loginsAcessos.ShowDialog() == DialogResult.OK)
             {
-                balcao.ShowDialog();
+                this.Hide();
+                this.Close();
             }
-
-            this.Show();
+            else
+            {
+                this.Show(); 
+            }
         }
+
+        private void btnCozinheiro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginsAcessos = new LoginsAcessos();
+            loginsAcessos.PerfilSelecionado = "Cozinheiro";
+            if (loginsAcessos.ShowDialog() == DialogResult.OK)
+            {
+                this.Hide();
+                this.Close();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
+
+        private void btnDONOeGERENTE_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginsAcessos = new LoginsAcessos();
+            loginsAcessos.PerfilSelecionado = "Dono";
+            if (loginsAcessos.ShowDialog() == DialogResult.OK)
+            {
+                this.Hide();
+                this.Close();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
+
     }
 }

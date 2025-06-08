@@ -82,6 +82,7 @@
             this.btnAcessar.TabIndex = 7;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = true;
+            this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
             // 
             // btnVoltarPerfis
             // 
@@ -94,6 +95,7 @@
             this.btnVoltarPerfis.TabIndex = 15;
             this.btnVoltarPerfis.Text = "Voltar";
             this.btnVoltarPerfis.UseVisualStyleBackColor = false;
+            this.btnVoltarPerfis.Click += new System.EventHandler(this.btnVoltarPerfis_Click);
             // 
             // LoginsAcessos
             // 
@@ -107,6 +109,7 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
             this.Name = "LoginsAcessos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginsAcessos";
             this.ResumeLayout(false);
             this.PerformLayout();

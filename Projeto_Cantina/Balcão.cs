@@ -32,13 +32,13 @@ namespace Projeto_Cantina
             ListaPedidos.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosPendentes)
             {
-                ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente}  - {ResumoProdutos(pedido)}");
+                ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente}  - {ResumoProdutos(pedido)} -- Tipo Pedido: {pedido.TipoPedido}");
             }
 
             ListaConcluidos.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosConcluidos)
             {
-                ListaConcluidos.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)}");
+                ListaConcluidos.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)} -- Tipo Pedido: {pedido.TipoPedido}");
             }
         }
 
@@ -65,8 +65,7 @@ namespace Projeto_Cantina
             if (index < 0) return;
 
             var pedido = GerenciadorPedidos.PedidosConcluidos[index];
-            GerenciadorPedidos.PedidosConcluidos.Remove(pedido);
-            GerenciadorPedidos.PedidosPendentes.Add(pedido);
+            GerenciadorPedidos.VoltarStatus(pedido);
 
             AtualizarListas();
         }

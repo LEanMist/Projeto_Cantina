@@ -104,6 +104,7 @@ namespace Projeto_Cantina
 
         private string MostrarFormaPagamento()
         {
+            this.Hide();
             using (var f = new Forma_de_Pagamento())
             {
 
@@ -112,10 +113,7 @@ namespace Projeto_Cantina
                                              .ToList();
                 f.TotalGeral = (decimal)carrinho.Total();
                 f.TipoPedido = this.TipoPedido;
-                
-
-
-                this.Visible = false;
+  
                 var resultado = f.ShowDialog(this);
 
                 if (resultado == DialogResult.OK)
@@ -123,8 +121,11 @@ namespace Projeto_Cantina
                     this.troco = f.Troco; 
                     return f.FormaSelecionada;
                 }
-
-                return null;
+                else
+                {
+                    this.Show();
+                    return null; // usuário cancelou
+                }
             }
         }
 
@@ -169,7 +170,7 @@ namespace Projeto_Cantina
 
 
             MessageBox.Show(resumo, "Confirmação");
-            GerenciadorPedidos.AdicionarPedido(nome, carrinho.Items);
+            GerenciadorPedidos.PedidosPendentes.Add(pedido);
             ResetarPedido();
 
 

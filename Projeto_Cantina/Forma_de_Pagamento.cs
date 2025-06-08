@@ -119,19 +119,8 @@ namespace Projeto_Cantina
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide(); 
-
-            using (var forma = new Form1())
-            {
-                if (forma.ShowDialog() == DialogResult.OK)
-                {
-                    this.Show();
-                }
-                else
-                {
-                    this.Close();
-                }
-            }
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

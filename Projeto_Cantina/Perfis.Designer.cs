@@ -60,6 +60,7 @@
             this.btnCozinheiro.TabIndex = 1;
             this.btnCozinheiro.Text = "Acesso Cozinheiro";
             this.btnCozinheiro.UseVisualStyleBackColor = true;
+            this.btnCozinheiro.Click += new System.EventHandler(this.btnCozinheiro_Click);
             // 
             // btnDONOeGERENTE
             // 
@@ -70,6 +71,7 @@
             this.btnDONOeGERENTE.TabIndex = 2;
             this.btnDONOeGERENTE.Text = "Acesso Dono/Gerente";
             this.btnDONOeGERENTE.UseVisualStyleBackColor = true;
+            this.btnDONOeGERENTE.Click += new System.EventHandler(this.btnDONOeGERENTE_Click);
             // 
             // pictureBox3
             // 

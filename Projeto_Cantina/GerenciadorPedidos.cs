@@ -11,15 +11,6 @@ namespace Projeto_Cantina
         public static List<Pedido> PedidosConcluidos { get; private set; } = new List<Pedido>();
         public static List<Pedido> PedidosPendentes { get; private set; } = new List<Pedido>();
 
-        public static void AdicionarPedido(string nomeCliente, List<Produtos> produtos)
-        {
-            PedidosPendentes.Add(new Pedido
-            {
-                NomeCliente = nomeCliente,
-                Produtos = produtos.Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade)).ToList()
-                
-            });
-        }
         public static void ConcluirPedido(Pedido pedido)
         {
             PedidosConcluidos.Add(pedido);
