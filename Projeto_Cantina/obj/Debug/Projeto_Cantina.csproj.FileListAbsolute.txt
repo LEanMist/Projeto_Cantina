@@ -32,3 +32,5 @@ C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Ca
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.LoginLoja.resources
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.LoginsAcessos.resources
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Perfis.resources
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Cozinha.resources
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.TelaGerenciamento.resources

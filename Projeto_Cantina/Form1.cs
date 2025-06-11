@@ -16,16 +16,16 @@ namespace Projeto_Cantina
         private Carrinho carrinho = new Carrinho();
         private readonly List<Produtos> catalogo = new List<Produtos>
         {
-            new Produtos("Pão de Queijo",      3.50),
-            new Produtos("Coxinha",            5.00),
-            new Produtos("Pastel de Carne",    6.00),
-            new Produtos("Pastel de Queijo",   5.50),
-            new Produtos("Suco Natural (300ml)", 4.00),
-            new Produtos("Refrigerante Lata",  4.50),
-            new Produtos("Hambúrguer Simples", 8.00),
-            new Produtos("Hambúrguer c/ Queijo", 9.00),
-            new Produtos("X-Tudo",            12.00),
-            new Produtos("Água Mineral 500ml", 2.50)
+            new Produtos("Pão de Queijo", 3.50,0,true),
+            new Produtos("Coxinha", 5.00,0,true),
+            new Produtos("Pastel de Carne", 6.00, 0, true),
+            new Produtos("Pastel de Queijo", 5.50, 0, true),
+            new Produtos("Suco Natural (300ml)", 4.00, 0, false),
+            new Produtos("Refrigerante Lata", 4.50, 0, false),
+            new Produtos("Hambúrguer Simples", 8.00, 0, true),
+            new Produtos("Hambúrguer c/ Queijo", 9.00, 0, true),
+            new Produtos("X-Tudo", 12.00, 0, true),
+            new Produtos("Água Mineral 500ml", 2.50, 0, false)
         };
         public string TipoPedido { get; set; } = "";
         private decimal troco = 0;
@@ -109,7 +109,7 @@ namespace Projeto_Cantina
             {
 
                 f.ItensFinalizados = carrinho.Items
-                                             .Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade))
+                                             .Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade, p.Chapa))
                                              .ToList();
                 f.TotalGeral = (decimal)carrinho.Total();
                 f.TipoPedido = this.TipoPedido;
@@ -162,7 +162,7 @@ namespace Projeto_Cantina
             var pedido = new Pedido
             {
                 NomeCliente = nome,
-                Produtos = carrinho.Items.Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade)).ToList(),
+                Produtos = carrinho.Items.Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade, p.Chapa)).ToList(),
                 TipoPedido = this.TipoPedido,
                 DataeHora = data,
                 FormadePagamento = forma

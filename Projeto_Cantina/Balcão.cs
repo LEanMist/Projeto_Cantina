@@ -13,6 +13,7 @@ namespace Projeto_Cantina
     public partial class Balcão : Form
     {
         private List<Pedido> pedidosPendentes = new List<Pedido>();
+        private List<Pedido> pedidosEmPreparo = new List<Pedido>();
         private List<Pedido> pedidosConcluidos = new List<Pedido>();
         public Balcão()
         {
@@ -35,6 +36,10 @@ namespace Projeto_Cantina
                 ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente}  - {ResumoProdutos(pedido)} -- Tipo Pedido: {pedido.TipoPedido}");
             }
 
+            ListaEmPreparo.Items.Clear();
+            foreach (var pedido in GerenciadorPedidos.PedidosPreparacao)
+                ListaEmPreparo.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)} -- Tipo Pedido: {pedido.TipoPedido}");
+
             ListaConcluidos.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosConcluidos)
             {
@@ -47,26 +52,82 @@ namespace Projeto_Cantina
             return string.Join(", ", pedido.Produtos.Select(p => $"{p.Nome} x{p.Quantidade}"));
         }
 
-
-        private void btnConcluir_Click(object sender, EventArgs e)
+        private void btnEmPreparo_Click(object sender, EventArgs e)
         {
-            int index = ListaPedidos.SelectedIndex;
-            if (index < 0) return;
+            int indice = ListaPedidos.SelectedIndex;
+            if (indice < 0 || indice >= GerenciadorPedidos.PedidosPendentes.Count)
+            {
+                MessageBox.Show("Selecione o pedido.");
+                return;
+            }
 
-            var pedido = GerenciadorPedidos.PedidosPendentes[index];
-            GerenciadorPedidos.ConcluirPedido(pedido);
-
-            AtualizarListas();
+            Pedido pedidoSelecionado = GerenciadorPedidos.PedidosPendentes[indice];
+            if (pedidoSelecionado.Produtos.Any(p => p.Chapa))
+            {
+                GerenciadorPedidos.PedidoEmPreparacao(pedidoSelecionado);
+                AtualizarListas();
+            }
+            else
+            {
+                MessageBox.Show("Este pedido não contém produtos que precisam de preparo na chapa.");
+                return;
+            }
         }
 
         private void btnVoltarStatus_Click(object sender, EventArgs e)
         {
-            int index = ListaConcluidos.SelectedIndex;
-            if (index < 0) return;
+            int indice = ListaEmPreparo.SelectedIndex;
+            if (indice < 0 || indice >= GerenciadorPedidos.PedidosPreparacao.Count)
+            {
+                MessageBox.Show("Selecione o pedido.");
+                return;
+            }
 
-            var pedido = GerenciadorPedidos.PedidosConcluidos[index];
-            GerenciadorPedidos.VoltarStatus(pedido);
+            Pedido pedidoSelecionado = GerenciadorPedidos.PedidosPreparacao[indice];
+            GerenciadorPedidos.VoltarStatusBalcao(pedidoSelecionado);
+            AtualizarListas();
+        }
 
+        private void btnConcluir_Click(object sender, EventArgs e)
+        {
+            int indice = ListaPedidos.SelectedIndex;
+            if (indice < 0 || indice >= GerenciadorPedidos.PedidosPendentes.Count)
+            {
+                MessageBox.Show("Selecione o pedido.");
+                return;
+            }
+
+            Pedido pedidoSelecionado = GerenciadorPedidos.PedidosPendentes[indice];
+
+            if (pedidoSelecionado.Produtos.Any(p => p.Chapa))
+            {
+                MessageBox.Show("Este pedido deve ir para cozinha Em Preparo");
+                return;
+            }
+            else
+            {
+                GerenciadorPedidos.ConcluirPedido(pedidoSelecionado);
+                AtualizarListas();
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            int indice = ListaConcluidos.SelectedIndex;
+            
+            if (indice < 0 || indice >= GerenciadorPedidos.PedidosConcluidos.Count)
+            {
+                MessageBox.Show("Selecione o pedido.");
+                return;
+            }
+
+            Pedido pedidoSelecionado = GerenciadorPedidos.PedidosConcluidos[indice];
+            if (pedidoSelecionado.Produtos.Any(p => p.Chapa))
+            {
+                MessageBox.Show("Voce não pode voltar status de um pedido ja passou pela cozinha");
+                return;
+            }
+            GerenciadorPedidos.VoltarStatusConcluidos(pedidoSelecionado);
             AtualizarListas();
         }
 

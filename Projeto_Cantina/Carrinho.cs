@@ -35,7 +35,7 @@ namespace Projeto_Cantina
                 return existente;
             }
 
-            var novo = new Produtos(produtobase.Nome, produtobase.Preco, qtd);
+            var novo = new Produtos(produtobase.Nome, produtobase.Preco, qtd, produtobase.Chapa);
             Items.Add(novo);
             return novo;
         }

@@ -12,13 +12,16 @@ namespace Projeto_Cantina
         public string Nome { get; set; }
         public double Preco { get; set; }
         public int Quantidade { get; set; }
+        public bool Chapa { get; set; }
 
 
-        public Produtos(string nome, double preco, int quantidade = 1)
+
+        public Produtos(string nome, double preco, int quantidade = 1,bool chapa = false)
         {
             Nome = nome;
             Preco = preco;
             Quantidade = quantidade;
+            Chapa = chapa;
         }
 
         public double CalcularValorTotal()

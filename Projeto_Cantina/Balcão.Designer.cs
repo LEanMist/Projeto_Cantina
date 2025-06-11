@@ -38,6 +38,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ListaConcluidos = new System.Windows.Forms.ListBox();
             this.btnVoltarInicio = new System.Windows.Forms.Button();
+            this.ListaEmPreparo = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnEmPreparo = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +80,7 @@
             // btnConcluir
             // 
             this.btnConcluir.Font = new System.Drawing.Font("Arimo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConcluir.Location = new System.Drawing.Point(695, 236);
+            this.btnConcluir.Location = new System.Drawing.Point(695, 322);
             this.btnConcluir.Name = "btnConcluir";
             this.btnConcluir.Size = new System.Drawing.Size(94, 46);
             this.btnConcluir.TabIndex = 15;
@@ -87,7 +91,7 @@
             // btnVoltarStatus
             // 
             this.btnVoltarStatus.Font = new System.Drawing.Font("Arimo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltarStatus.Location = new System.Drawing.Point(695, 316);
+            this.btnVoltarStatus.Location = new System.Drawing.Point(695, 252);
             this.btnVoltarStatus.Name = "btnVoltarStatus";
             this.btnVoltarStatus.Size = new System.Drawing.Size(94, 38);
             this.btnVoltarStatus.TabIndex = 16;
@@ -101,7 +105,7 @@
             this.ListaPedidos.Font = new System.Drawing.Font("Arimo", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListaPedidos.FormattingEnabled = true;
             this.ListaPedidos.ItemHeight = 22;
-            this.ListaPedidos.Location = new System.Drawing.Point(12, 198);
+            this.ListaPedidos.Location = new System.Drawing.Point(12, 182);
             this.ListaPedidos.Name = "ListaPedidos";
             this.ListaPedidos.Size = new System.Drawing.Size(547, 48);
             this.ListaPedidos.TabIndex = 17;
@@ -110,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arimo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(220, 141);
+            this.label2.Location = new System.Drawing.Point(220, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 30);
             this.label2.TabIndex = 18;
@@ -120,7 +124,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arimo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(139, 324);
+            this.label3.Location = new System.Drawing.Point(157, 367);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(252, 30);
             this.label3.TabIndex = 19;
@@ -132,7 +136,7 @@
             this.ListaConcluidos.Font = new System.Drawing.Font("Arimo", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListaConcluidos.FormattingEnabled = true;
             this.ListaConcluidos.ItemHeight = 22;
-            this.ListaConcluidos.Location = new System.Drawing.Point(12, 375);
+            this.ListaConcluidos.Location = new System.Drawing.Point(12, 412);
             this.ListaConcluidos.Name = "ListaConcluidos";
             this.ListaConcluidos.Size = new System.Drawing.Size(547, 48);
             this.ListaConcluidos.TabIndex = 20;
@@ -150,12 +154,59 @@
             this.btnVoltarInicio.UseVisualStyleBackColor = false;
             this.btnVoltarInicio.Click += new System.EventHandler(this.btnVoltarInicio_Click);
             // 
+            // ListaEmPreparo
+            // 
+            this.ListaEmPreparo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(196)))), ((int)(((byte)(183)))));
+            this.ListaEmPreparo.Font = new System.Drawing.Font("Arimo", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListaEmPreparo.FormattingEnabled = true;
+            this.ListaEmPreparo.ItemHeight = 22;
+            this.ListaEmPreparo.Location = new System.Drawing.Point(12, 295);
+            this.ListaEmPreparo.Name = "ListaEmPreparo";
+            this.ListaEmPreparo.Size = new System.Drawing.Size(547, 48);
+            this.ListaEmPreparo.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arimo", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(157, 252);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(250, 30);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "PEDIDOS EM PREPARO";
+            // 
+            // btnEmPreparo
+            // 
+            this.btnEmPreparo.Font = new System.Drawing.Font("Arimo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmPreparo.Location = new System.Drawing.Point(695, 182);
+            this.btnEmPreparo.Name = "btnEmPreparo";
+            this.btnEmPreparo.Size = new System.Drawing.Size(94, 46);
+            this.btnEmPreparo.TabIndex = 24;
+            this.btnEmPreparo.Text = "Adicionar Em Preparo\r\n";
+            this.btnEmPreparo.UseVisualStyleBackColor = true;
+            this.btnEmPreparo.Click += new System.EventHandler(this.btnEmPreparo_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Font = new System.Drawing.Font("Arimo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(695, 393);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(94, 48);
+            this.btnVoltar.TabIndex = 25;
+            this.btnVoltar.Text = "Voltar a Pendentes";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // Balcão
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(850, 476);
+            this.ClientSize = new System.Drawing.Size(850, 496);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnEmPreparo);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ListaEmPreparo);
             this.Controls.Add(this.btnVoltarInicio);
             this.Controls.Add(this.ListaConcluidos);
             this.Controls.Add(this.label3);
@@ -188,5 +239,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox ListaConcluidos;
         private System.Windows.Forms.Button btnVoltarInicio;
+        private System.Windows.Forms.ListBox ListaEmPreparo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnEmPreparo;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
