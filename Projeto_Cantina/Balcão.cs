@@ -12,9 +12,9 @@ namespace Projeto_Cantina
 {
     public partial class Balcão : Form
     {
-        private List<Pedido> pedidosPendentes = new List<Pedido>();
-        private List<Pedido> pedidosEmPreparo = new List<Pedido>();
-        private List<Pedido> pedidosConcluidos = new List<Pedido>();
+        public List<Pedido> pedidosPendentes = new List<Pedido>();
+        public List<Pedido> pedidosEmPreparo = new List<Pedido>();
+        public List<Pedido> pedidosConcluidos = new List<Pedido>();
         public Balcão()
         {
             InitializeComponent();
@@ -33,17 +33,17 @@ namespace Projeto_Cantina
             ListaPedidos.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosPendentes)
             {
-                ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente}  - {ResumoProdutos(pedido)} -- Tipo Pedido: {pedido.TipoPedido}");
+                ListaPedidos.Items.Add($"Cliente: {pedido.NomeCliente}\n  - {ResumoProdutos(pedido)}\n -- Tipo Pedido: {pedido.TipoPedido}\n");
             }
 
             ListaEmPreparo.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosPreparacao)
-                ListaEmPreparo.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)} -- Tipo Pedido: {pedido.TipoPedido}");
+                ListaEmPreparo.Items.Add($"Cliente: {pedido.NomeCliente}\n - {ResumoProdutos(pedido)}\n -- Tipo Pedido: {pedido.TipoPedido}\n");
 
             ListaConcluidos.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosConcluidos)
             {
-                ListaConcluidos.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)} -- Tipo Pedido: {pedido.TipoPedido}");
+                ListaConcluidos.Items.Add($"Cliente: {pedido.NomeCliente} - {ResumoProdutos(pedido)}\n -- Tipo Pedido:  {pedido.TipoPedido} \n");
             }
         }
 

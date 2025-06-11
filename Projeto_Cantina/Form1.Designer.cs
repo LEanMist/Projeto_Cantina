@@ -56,7 +56,6 @@
             this.ListaProdutos.Name = "ListaProdutos";
             this.ListaProdutos.Size = new System.Drawing.Size(259, 142);
             this.ListaProdutos.TabIndex = 5;
-            this.ListaProdutos.SelectedIndexChanged += new System.EventHandler(this.ListaProdutos_SelectedIndexChanged);
             // 
             // ListaCarrinho
             // 

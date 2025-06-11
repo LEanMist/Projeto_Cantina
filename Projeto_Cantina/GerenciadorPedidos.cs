@@ -8,11 +8,11 @@ namespace Projeto_Cantina
 {
     public static class GerenciadorPedidos
     {
-        public static List<Pedido> PedidosPendentes { get; private set; } = new List<Pedido>();
-        public static List<Pedido> PedidosPreparacao { get; private set; } = new List<Pedido>();
-        public static List<Pedido> PedidosConcluidos { get; private set; } = new List<Pedido>();
-        public static List<Pedido> PedidosCozinha { get; private set; } = new List<Pedido>();
-        public static List<Pedido> CozinhaConcluidos { get; private set; } = new List<Pedido>();
+        public static List<Pedido> PedidosPendentes { get; set; } = new List<Pedido>();
+        public static List<Pedido> PedidosPreparacao { get; set; } = new List<Pedido>();
+        public static List<Pedido> PedidosConcluidos { get; set; } = new List<Pedido>();
+        public static List<Pedido> PedidosCozinha { get; set; } = new List<Pedido>();
+        public static List<Pedido> CozinhaConcluidos { get; set; } = new List<Pedido>();
 
         public static bool PCozinha(Pedido pedido)
         {
@@ -65,6 +65,9 @@ namespace Projeto_Cantina
                 PedidosCozinha.Add(pedido);
                 PedidosConcluidos.Remove(pedido);
             }
+        }
+        public static void NomesEmEspera(Pedido pedido)
+        {
         }
     }
 }

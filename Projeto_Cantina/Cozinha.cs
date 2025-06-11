@@ -33,12 +33,12 @@ namespace Projeto_Cantina
             ListaCozinha.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.PedidosCozinha)
             {
-                ListaCozinha.Items.Add($"Cliente: {pedido.NomeCliente} - Preparar: {ResumoProdutos(pedido)}");
+                ListaCozinha.Items.Add($"Cliente: {pedido.NomeCliente}\n - Preparar: {ResumoProdutos(pedido)}\n");
             }
             ListaConcluidosCozinha.Items.Clear();
             foreach (var pedido in GerenciadorPedidos.CozinhaConcluidos)
             {
-                ListaConcluidosCozinha.Items.Add($"Cliente: {pedido.NomeCliente} - Concluido: {ResumoProdutos(pedido)}");
+                ListaConcluidosCozinha.Items.Add($"Cliente: {pedido.NomeCliente}\n - Concluido: {ResumoProdutos(pedido)}\n");
             }
         }
         private string ResumoProdutos(Pedido pedido)

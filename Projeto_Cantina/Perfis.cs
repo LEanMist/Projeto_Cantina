@@ -57,8 +57,7 @@ namespace Projeto_Cantina
                 this.Show();
             }
         }
-
-        private void btnDONOeGERENTE_Click(object sender, EventArgs e)
+        private void btnDONOeGERENTE_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             var loginsAcessos = new LoginsAcessos();
@@ -74,5 +73,14 @@ namespace Projeto_Cantina
             }
         }
 
+        private void btnChamada_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var f = new Chamada())
+            {
+                f.ShowDialog();
+            }
+            this.Show();
+        }
     }
 }

@@ -54,6 +54,12 @@
       <DependentUpon>Balcão.cs</DependentUpon>
     </Compile>
     <Compile Include="Carrinho.cs" />
+    <Compile Include="Chamada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chamada.Designer.cs">
+      <DependentUpon>Chamada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cozinha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="Balcão.resx">
       <DependentUpon>Balcão.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chamada.resx">
+      <DependentUpon>Chamada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cozinha.resx">
       <DependentUpon>Cozinha.cs</DependentUpon>
@@ -205,6 +214,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chefe-de-cozinha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wondicon-ui-free-user_111213.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

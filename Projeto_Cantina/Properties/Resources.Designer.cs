@@ -189,5 +189,15 @@ namespace Projeto_Cantina.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wondicon_ui_free_user_111213 {
+            get {
+                object obj = ResourceManager.GetObject("wondicon-ui-free-user_111213", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

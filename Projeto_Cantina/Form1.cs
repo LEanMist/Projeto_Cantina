@@ -199,10 +199,5 @@ namespace Projeto_Cantina
                 }
             }
         }
-
-        private void ListaProdutos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
