@@ -108,6 +108,7 @@ namespace Projeto_Cantina
             {
                 GerenciadorPedidos.ConcluirPedido(pedidoSelecionado);
                 AtualizarListas();
+                AtualizarFormChamada();
             }
         }
 
@@ -130,7 +131,17 @@ namespace Projeto_Cantina
             GerenciadorPedidos.VoltarStatusConcluidos(pedidoSelecionado);
             AtualizarListas();
         }
-
+        private void AtualizarFormChamada()
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is Chamada chamadaForm)
+                {
+                    chamadaForm.AtualizarNome();
+                    break;
+                }
+            }
+        }
         private void btnVoltarInicio_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

@@ -30,7 +30,7 @@ namespace Projeto_Cantina
             }
             else
             {
-                this.Show(); // Fecha o menu inicial se o usuário cancelar
+                this.Show(); 
             }
         }
 
@@ -44,6 +44,18 @@ namespace Projeto_Cantina
             }
 
             this.Show(); 
+        }
+
+        private void btnChamada_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (var loginLoja = new Chamada())
+            {
+                loginLoja.ShowDialog();
+            }
+
+            this.Show();
         }
     }
 }

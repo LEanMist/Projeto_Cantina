@@ -32,7 +32,7 @@ namespace Projeto_Cantina
                 if (usuario == "atendente" && senha == "123")
                 {
                     this.Hide();
-                    var balcao = new Balcão(); 
+                    var balcao = new Balcão();
                     balcao.ShowDialog();
                     this.Close();
                 }
@@ -67,6 +67,20 @@ namespace Projeto_Cantina
                 else
                 {
                     MessageBox.Show("Usuário ou senha incorretos para o perfil de Dono/Gerente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (PerfilSelecionado == "Chamada")
+            {
+                if (usuario == "chamada" && senha == "123")
+                {
+                    this.Hide();
+                    var chamada = new ControleChamada();
+                    chamada.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha incorretos para o perfil de Chamada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

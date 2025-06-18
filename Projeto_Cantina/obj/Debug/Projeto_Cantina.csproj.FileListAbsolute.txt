@@ -37,3 +37,5 @@ C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Can
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Cozinha.resources
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.TelaGerenciamento.resources
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Chamada.resources
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Chamada.resources
+C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.ControleChamada.resources

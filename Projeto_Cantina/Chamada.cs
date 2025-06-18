@@ -15,31 +15,32 @@ namespace Projeto_Cantina
         public Chamada()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void Chamada_Load(object sender, EventArgs e)
         {
             AtualizarNome();
         }
-        private void AtualizarNome()
+        public void AtualizarNome()
         {
             ListaNomes.Items.Clear();
+
             foreach (var pedido in GerenciadorPedidos.PedidosPreparacao)
             {
-                ListaNomes.Items.Add($"{NomesClientes(pedido)}");
+                ListaNomes.Items.Add($"{pedido.NomeCliente}");
             }
 
-            txtChamada.Text.Clone();
-            foreach (var pedido in GerenciadorPedidos.PedidosConcluidos)
+            if (GerenciadorPedidos.PedidosConcluidos.Any())
             {
-                txtChamada.Text = pedido.NomeCliente;
+                txtChamada.Text = GerenciadorPedidos.PedidosConcluidos.First().NomeCliente;
+            }
+            else
+            {
+                txtChamada.Clear();
             }
         }
-        private string NomesClientes(Pedido pedido)
-        {
-            return string.Join(", ", $"{pedido.NomeCliente}");
-        }
-
         private void btnVoltarInicio_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

@@ -28,34 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVoltarInicio = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.ListaNomes = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtChamada = new System.Windows.Forms.TextBox();
+            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnVoltarInicio
-            // 
-            this.btnVoltarInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(122)))), ((int)(((byte)(106)))));
-            this.btnVoltarInicio.Font = new System.Drawing.Font("Arimo", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltarInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.btnVoltarInicio.Location = new System.Drawing.Point(12, 52);
-            this.btnVoltarInicio.Name = "btnVoltarInicio";
-            this.btnVoltarInicio.Size = new System.Drawing.Size(75, 23);
-            this.btnVoltarInicio.TabIndex = 22;
-            this.btnVoltarInicio.Text = "Voltar";
-            this.btnVoltarInicio.UseVisualStyleBackColor = false;
-            this.btnVoltarInicio.Click += new System.EventHandler(this.btnVoltarInicio_Click);
             // 
             // ListaNomes
             // 
-            this.ListaNomes.Font = new System.Drawing.Font("Arimo", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListaNomes.Font = new System.Drawing.Font("Arimo", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListaNomes.FormattingEnabled = true;
-            this.ListaNomes.ItemHeight = 34;
+            this.ListaNomes.ItemHeight = 30;
             this.ListaNomes.Location = new System.Drawing.Point(296, 302);
             this.ListaNomes.Name = "ListaNomes";
-            this.ListaNomes.Size = new System.Drawing.Size(205, 38);
+            this.ListaNomes.Size = new System.Drawing.Size(205, 34);
             this.ListaNomes.TabIndex = 26;
             // 
             // label1
@@ -81,11 +70,15 @@
             // txtChamada
             // 
             this.txtChamada.Font = new System.Drawing.Font("Arimo", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChamada.Location = new System.Drawing.Point(243, 118);
+            this.txtChamada.Location = new System.Drawing.Point(215, 115);
             this.txtChamada.Name = "txtChamada";
-            this.txtChamada.Size = new System.Drawing.Size(302, 63);
+            this.txtChamada.Size = new System.Drawing.Size(371, 63);
             this.txtChamada.TabIndex = 29;
             this.txtChamada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // produtosBindingSource
+            // 
+            this.produtosBindingSource.DataSource = typeof(Projeto_Cantina.Produtos);
             // 
             // Chamada
             // 
@@ -96,22 +89,21 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ListaNomes);
-            this.Controls.Add(this.btnVoltarInicio);
             this.Name = "Chamada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chamada";
             this.Load += new System.EventHandler(this.Chamada_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnVoltarInicio;
         private System.Windows.Forms.ListBox ListaNomes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtChamada;
+        private System.Windows.Forms.BindingSource produtosBindingSource;
     }
 }

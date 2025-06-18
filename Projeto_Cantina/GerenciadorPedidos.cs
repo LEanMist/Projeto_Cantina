@@ -13,6 +13,8 @@ namespace Projeto_Cantina
         public static List<Pedido> PedidosConcluidos { get; set; } = new List<Pedido>();
         public static List<Pedido> PedidosCozinha { get; set; } = new List<Pedido>();
         public static List<Pedido> CozinhaConcluidos { get; set; } = new List<Pedido>();
+        public static List<Pedido> ClientesConcluidos { get; private set; } = new List<Pedido>();
+        public static List<Pedido> ClientesPendentes { get; private set; } = new List<Pedido>();
 
         public static bool PCozinha(Pedido pedido)
         {
@@ -66,8 +68,14 @@ namespace Projeto_Cantina
                 PedidosConcluidos.Remove(pedido);
             }
         }
-        public static void NomesEmEspera(Pedido pedido)
+        public static void RemoverDaLista(Pedido pedido)
         {
+            PedidosPendentes.Remove(pedido);
+            PedidosPreparacao.Remove(pedido);
+            PedidosConcluidos.Remove(pedido);
+            PedidosCozinha.Remove(pedido);
+            CozinhaConcluidos.Remove(pedido);
         }
+
     }
 }

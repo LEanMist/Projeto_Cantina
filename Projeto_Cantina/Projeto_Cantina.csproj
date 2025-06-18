@@ -60,6 +60,12 @@
     <Compile Include="Chamada.Designer.cs">
       <DependentUpon>Chamada.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControleChamada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControleChamada.Designer.cs">
+      <DependentUpon>ControleChamada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cozinha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <EmbeddedResource Include="Chamada.resx">
       <DependentUpon>Chamada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControleChamada.resx">
+      <DependentUpon>ControleChamada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cozinha.resx">
       <DependentUpon>Cozinha.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +172,24 @@
       <DependentUpon>TelaGerenciamento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Balcão.datasource" />
+    <None Include="Properties\DataSources\Carrinho.datasource" />
+    <None Include="Properties\DataSources\Chamada.datasource" />
+    <None Include="Properties\DataSources\Cozinha.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Forma_de_Pagamento.datasource" />
+    <None Include="Properties\DataSources\GerenciadorPedidos.datasource" />
+    <None Include="Properties\DataSources\LoginLoja.datasource" />
+    <None Include="Properties\DataSources\LoginsAcessos.datasource" />
+    <None Include="Properties\DataSources\MenuInicial.datasource" />
+    <None Include="Properties\DataSources\OpçoesPedido.datasource" />
+    <None Include="Properties\DataSources\Pedido.datasource" />
+    <None Include="Properties\DataSources\Perfis.datasource" />
+    <None Include="Properties\DataSources\Produtos.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Projeto_Cantina.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Projeto_Cantina.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\TelaGerenciamento.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

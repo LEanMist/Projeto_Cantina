@@ -76,11 +76,17 @@ namespace Projeto_Cantina
         private void btnChamada_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (var f = new Chamada())
+            var loginsAcessos = new LoginsAcessos();
+            loginsAcessos.PerfilSelecionado = "Chamada";
+            if (loginsAcessos.ShowDialog() == DialogResult.OK)
             {
-                f.ShowDialog();
+                this.Hide();
+                this.Close();
             }
-            this.Show();
+            else
+            {
+                this.Show();
+            }
         }
     }
 }

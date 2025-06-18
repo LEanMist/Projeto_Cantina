@@ -68,11 +68,11 @@
             // btnChamada
             // 
             this.btnChamada.Font = new System.Drawing.Font("Arimo", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChamada.Location = new System.Drawing.Point(559, 224);
+            this.btnChamada.Location = new System.Drawing.Point(563, 218);
             this.btnChamada.Name = "btnChamada";
-            this.btnChamada.Size = new System.Drawing.Size(165, 47);
+            this.btnChamada.Size = new System.Drawing.Size(151, 59);
             this.btnChamada.TabIndex = 2;
-            this.btnChamada.Text = "Acesso a Chamada";
+            this.btnChamada.Text = "Acesso ao Controle Chamada";
             this.btnChamada.UseVisualStyleBackColor = true;
             this.btnChamada.Click += new System.EventHandler(this.btnChamada_Click);
             // 
