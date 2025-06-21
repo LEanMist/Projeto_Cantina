@@ -85,6 +85,7 @@
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="GerenciadorPedidos.cs" />
+    <Compile Include="GerenciadorProdutos.cs" />
     <Compile Include="LoginLoja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +263,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bolt-2024.pdf %2811%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

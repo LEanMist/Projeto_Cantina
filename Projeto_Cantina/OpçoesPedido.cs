@@ -36,6 +36,7 @@ namespace Projeto_Cantina
 
         private void btnVoltarInicio_Click(object sender, EventArgs e)
         {
+            
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }

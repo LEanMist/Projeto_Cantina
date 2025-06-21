@@ -14,19 +14,8 @@ namespace Projeto_Cantina
     public partial class Form1 : Form
     {
         private Carrinho carrinho = new Carrinho();
-        private readonly List<Produtos> catalogo = new List<Produtos>
-        {
-            new Produtos("Pão de Queijo", 3.50,0,true),
-            new Produtos("Coxinha", 5.00,0,true),
-            new Produtos("Pastel de Carne", 6.00, 0, true),
-            new Produtos("Pastel de Queijo", 5.50, 0, true),
-            new Produtos("Suco Natural (300ml)", 4.00, 0, false),
-            new Produtos("Refrigerante Lata", 4.50, 0, false),
-            new Produtos("Hambúrguer Simples", 8.00, 0, true),
-            new Produtos("Hambúrguer c/ Queijo", 9.00, 0, true),
-            new Produtos("X-Tudo", 12.00, 0, true),
-            new Produtos("Água Mineral 500ml", 2.50, 0, false)
-        };
+        private List<Produtos> catalogo => GerenciadorProdutos.Catalogo;
+
         public string TipoPedido { get; set; } = "";
         private decimal troco = 0;
         public Form1()
@@ -72,9 +61,18 @@ namespace Projeto_Cantina
             }
 
             var baseProd = catalogo[idx];
+
+            if (baseProd.Estoque <= 0)
+            {
+                MessageBox.Show("Produto sem estoque!");
+                return;
+            }
+
             var produto = carrinho.AdicionarItem(baseProd);
+
             CarregarCarrinho();
             AtualizarTotal();
+            CarregarProdutos();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -87,8 +85,12 @@ namespace Projeto_Cantina
             }
 
             bool removido = carrinho.RemoverItem(selecionado);
+
+            var removed = catalogo.FirstOrDefault(p => p.Nome == selecionado.Nome);
+
             CarregarCarrinho();
             AtualizarTotal();
+            CarregarProdutos();
         }
 
         private void ResetarPedido()
@@ -113,12 +115,12 @@ namespace Projeto_Cantina
                                              .ToList();
                 f.TotalGeral = (decimal)carrinho.Total();
                 f.TipoPedido = this.TipoPedido;
-  
+
                 var resultado = f.ShowDialog(this);
 
                 if (resultado == DialogResult.OK)
                 {
-                    this.troco = f.Troco; 
+                    this.troco = f.Troco;
                     return f.FormaSelecionada;
                 }
                 else
@@ -178,26 +180,39 @@ namespace Projeto_Cantina
 
         private void btnVoltarTipo_Click(object sender, EventArgs e)
         {
-            var resposta = MessageBox.Show("Deseja voltar e escolher outro tipo de pedido?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            this.Hide();  // Esconde a tela da Cantina
 
-            if (resposta == DialogResult.Yes)
+            using (var opcoes = new OpçoesPedido())
             {
-                this.Hide(); // Esconde a tela de vendas
+                var resultado = opcoes.ShowDialog();
 
-                using (var opcoes = new OpçoesPedido())
+                if (resultado == DialogResult.OK)
                 {
-                    if (opcoes.ShowDialog() == DialogResult.OK)
-                    {
-                        TipoPedido = opcoes.TipoPedidoSelecionado;
-                        this.Show();
-                        MessageBox.Show($"Novo tipo de pedido selecionado: {TipoPedido}", "Atualizado");
-                    }
-                    else
-                    {
-                        this.Close();
-                    }
+                    TipoPedido = opcoes.TipoPedidoSelecionado;
+                    this.Show();  // Volta pra Cantina caso o usuário apenas troque o tipo
+                    MessageBox.Show($"Novo tipo de pedido selecionado: {TipoPedido}", "Atualizado");
+                }
+                else if (resultado == DialogResult.Cancel)
+                {
+                    // O usuário quis voltar pro Menu Inicial
+                    RestaurarEstoqueECancelarPedido();
+                    this.Close();  // Fecha a Cantina e volta pro Menu
                 }
             }
+        }
+
+        private void RestaurarEstoqueECancelarPedido()
+        {
+            foreach (var item in carrinho.Items)
+            {
+                var produtoBase = catalogo.FirstOrDefault(p => p.Nome == item.Nome);
+                if (produtoBase != null)
+                {
+                    produtoBase.Estoque += item.Quantidade; // Restaura o estoque
+                }
+            }
+            
+            ResetarPedido();
         }
     }
 }

@@ -13,15 +13,17 @@ namespace Projeto_Cantina
         public double Preco { get; set; }
         public int Quantidade { get; set; }
         public bool Chapa { get; set; }
+        public int Estoque { get; set; }
 
 
 
-        public Produtos(string nome, double preco, int quantidade = 1,bool chapa = false)
+        public Produtos(string nome, double preco, int quantidade = 1,bool chapa = false, int estoque = 0)
         {
             Nome = nome;
             Preco = preco;
             Quantidade = quantidade;
             Chapa = chapa;
+            Estoque = estoque;
         }
 
         public double CalcularValorTotal()
@@ -37,5 +39,6 @@ namespace Projeto_Cantina
         {
             return $"{Nome} - R$ {Preco:F2}";
         }
+
     }
 }

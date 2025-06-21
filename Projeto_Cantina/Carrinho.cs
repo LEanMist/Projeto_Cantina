@@ -28,12 +28,23 @@ namespace Projeto_Cantina
                 return null;
             }
 
+            if (produtobase.Estoque < qtd)
+            {
+                MessageBox.Show("Quantidade maior que o estoque disponível.");
+                return null;
+            }
+            if (produtobase.Estoque > 0)
+            {
+                produtobase.Estoque -= qtd; 
+            }
+
             var existente = Items.FirstOrDefault(p => p.Nome == produtobase.Nome);
             if (existente != null)
             {
                 existente.Quantidade += qtd;
                 return existente;
             }
+            
 
             var novo = new Produtos(produtobase.Nome, produtobase.Preco, qtd, produtobase.Chapa);
             Items.Add(novo);
@@ -49,7 +60,7 @@ namespace Projeto_Cantina
                     "Quantidade", "1");
 
                 if (string.IsNullOrWhiteSpace(input))
-                    return false;                       // usuário cancelou
+                    return false; 
 
                 if (!int.TryParse(input, out int qtd) || qtd <= 0)
                 {
@@ -63,14 +74,18 @@ namespace Projeto_Cantina
                     continue;
                 }
 
-                // remove o item inteiro
+                var produtoCatalogo = GerenciadorProdutos.Catalogo.FirstOrDefault(p => p.Nome == produtoSelecionado.Nome);
+                if (produtoCatalogo != null)
+                {
+                    produtoCatalogo.Estoque += qtd;
+                }
+
                 if (qtd == produtoSelecionado.Quantidade)
                 {
                     Items.Remove(produtoSelecionado);
                     return true;
                 }
 
-                // apenas diminui
                 produtoSelecionado.Quantidade -= qtd;
                 return false;
             }
