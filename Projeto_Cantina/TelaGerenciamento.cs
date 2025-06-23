@@ -1,60 +1,81 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace Projeto_Cantina
 {
     public partial class TelaGerenciamento : Form
     {
         private BindingList<Produtos> bindingProdutos;
-        private List<Produtos> copiaTempProdutos;
+        private Stack<List<Produtos>> historicoUndo = new Stack<List<Produtos>>();
+        private Stack<List<Produtos>> historicoRedo = new Stack<List<Produtos>>();
+        private bool precisaSalvarAntesDeSair = false;
+        private List<Produtos> estadoSalvo = new List<Produtos>();
+
 
         public TelaGerenciamento()
         {
             InitializeComponent();
-            CarregarGerenciador();
-            Gerenciador.CellValidating += Gerenciador_CellValidating;
             this.ControlBox = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            CarregarGerenciador();
+            Gerenciador.CellBeginEdit += Gerenciador_CellBeginEdit;
+            Gerenciador.EditingControlShowing += Gerenciador_EditingControlShowing;
         }
         private void CarregarGerenciador()
         {
-            copiaTempProdutos = GerenciadorProdutos.Catalogo.Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade, p.Chapa, p.Estoque)).ToList();
-            bindingProdutos = new BindingList<Produtos>(copiaTempProdutos);
+            bindingProdutos = new BindingList<Produtos>(GerenciadorProdutos.Catalogo);
             Gerenciador.DataSource = bindingProdutos;
 
             foreach (DataGridViewColumn col in Gerenciador.Columns)
             {
                 if (col.Name == "Quantidade")
-                {
                     col.Visible = false;
-                }
             }
+
+            estadoSalvo = ClonarEstadoAtual();
+        }
+
+        private List<Produtos> ClonarEstadoAtual()
+        {
+            return GerenciadorProdutos.Catalogo
+                .Select(p => new Produtos(p.Nome, p.Preco, p.Quantidade, p.Chapa, p.Estoque))
+                .ToList();
+        }
+
+        private void RestaurarEstado(List<Produtos> estado)
+        {
+            GerenciadorProdutos.Catalogo.Clear();
+            foreach (var p in estado)
+                GerenciadorProdutos.Catalogo.Add(p);
+
+            bindingProdutos.ResetBindings();
+        }
+
+        private void SalvarAlteracoes()
+        {
+            Gerenciador.EndEdit();
+            historicoUndo.Clear();
+            historicoRedo.Clear();
+            precisaSalvarAntesDeSair = false;
+
+            estadoSalvo = ClonarEstadoAtual();
+
+            MessageBox.Show("Alterações salvas com sucesso!", "Sucesso");
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Gerenciador.EndEdit(); // Termina a edição atual no grid
-
-            GerenciadorProdutos.Catalogo.Clear();
-            GerenciadorProdutos.Catalogo.AddRange(copiaTempProdutos.Select(p =>
-                new Produtos(p.Nome, p.Preco, p.Quantidade, p.Chapa, p.Estoque)
-            ));
-            MessageBox.Show("Alterações salvas no catálogo!", "Sucesso");
+            SalvarAlteracoes();
         }
-
         private void btnAddProduto_Click(object sender, EventArgs e)
         {
             string nome = Microsoft.VisualBasic.Interaction.InputBox("Nome do produto:", "Novo Produto");
-            if (string.IsNullOrWhiteSpace(nome))
-            { return; }
+            if (string.IsNullOrWhiteSpace(nome)) return;
 
             string precoStr = Microsoft.VisualBasic.Interaction.InputBox("Preço do produto:", "Novo Produto", "0");
             if (!double.TryParse(precoStr, out double preco) || preco <= 0)
@@ -73,11 +94,120 @@ namespace Projeto_Cantina
             string chapaStr = Microsoft.VisualBasic.Interaction.InputBox("É chapa? (sim/não):", "Novo Produto", "não");
             bool chapa = chapaStr.Trim().ToLower() == "sim";
 
-            var novoProduto = new Produtos(nome, preco, quantidade: 0, chapa: chapa, estoque: estoque);
+            historicoUndo.Push(ClonarEstadoAtual());
+            historicoRedo.Clear();
+            precisaSalvarAntesDeSair = true;
 
+            var novoProduto = new Produtos(nome, preco, 0, chapa, estoque);
             GerenciadorProdutos.Catalogo.Add(novoProduto);
             bindingProdutos.ResetBindings();
-            CarregarGerenciador();           
+        }
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            if (historicoUndo.Count > 0)
+            {
+                historicoRedo.Push(ClonarEstadoAtual());
+                var estadoAnterior = historicoUndo.Pop();
+                RestaurarEstado(estadoAnterior);
+                precisaSalvarAntesDeSair = true;
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma alteração para desfazer.");
+            }
+        }
+
+        private void btnRedo_Click(object sender, EventArgs e)
+        {
+            if (historicoRedo.Count > 0)
+            {
+                historicoUndo.Push(ClonarEstadoAtual());
+                var estadoPosterior = historicoRedo.Pop();
+                RestaurarEstado(estadoPosterior);
+                precisaSalvarAntesDeSair = true;
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma alteração para refazer.");
+            }
+        }
+        private void btnVoltarPerfis_Click(object sender, EventArgs e)
+        {
+            if (precisaSalvarAntesDeSair)
+            {
+                var resposta = MessageBox.Show(
+                    "Existem alterações não salvas. Tem certeza que deseja voltar para os Perfis sem salvar?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (resposta == DialogResult.No)
+                    return;
+
+                RestaurarEstado(estadoSalvo);
+                precisaSalvarAntesDeSair = false;
+            }
+
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+        private void Gerenciador_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            historicoUndo.Push(ClonarEstadoAtual());
+            historicoRedo.Clear();
+            precisaSalvarAntesDeSair = true;
+        }
+
+        private void Gerenciador_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            int colunaEstoque = Gerenciador.Columns["Estoque"].Index;
+            int colunaPreco = Gerenciador.Columns["Preco"].Index;
+
+            TextBox tb = e.Control as TextBox;
+            tb.KeyPress -= ApenasNumeros_KeyPress;
+            tb.KeyPress -= ApenasNumerosEDecimal_KeyPress;
+
+            if (Gerenciador.CurrentCell.ColumnIndex == colunaEstoque)
+            {
+                tb.KeyPress += ApenasNumeros_KeyPress;
+            }
+            else if (Gerenciador.CurrentCell.ColumnIndex == colunaPreco)
+            {
+                tb.KeyPress += ApenasNumerosEDecimal_KeyPress;
+            }
+        }
+
+        private void ApenasNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ApenasNumerosEDecimal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+
+            bool jaTemVirgula = tb.Text.Contains(',') || tb.Text.Contains('.');
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+ 
+                if ((e.KeyChar == ',' || e.KeyChar == '.') && !jaTemVirgula)
+                {
+
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+
+            if (e.KeyChar == '-')
+            {
+                e.Handled = true;
+            }
         }
 
         private void TelaGerenciamento_Click(object sender, EventArgs e)
@@ -85,34 +215,7 @@ namespace Projeto_Cantina
             Gerenciador.ClearSelection();
             this.ActiveControl = null;
         }
-
-        private void Gerenciador_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            if (Gerenciador.Columns[e.ColumnIndex].Name == "Estoque")
-            {
-                string valor = e.FormattedValue.ToString();
-
-                if (!int.TryParse(valor, out int estoque) || estoque < 0)
-                {
-                    MessageBox.Show("Digite apenas números inteiros positivos para o estoque.", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    e.Cancel = true;
-                }
-            }
-        }
-        private void btnVoltarAlterações_Click(object sender, EventArgs e)
-        {
-            var resposta = MessageBox.Show("Tem certeza que deseja descartar todas as alterações feitas e voltar para o estado original?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (resposta == DialogResult.Yes)
-            {
-                CarregarGerenciador();
-                MessageBox.Show("Todas as alterações foram descartadas. Dados recarregados.", "Recarregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        private void btnVoltarPerfis_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-    }   
+    }
 }
+
+        

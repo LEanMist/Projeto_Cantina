@@ -32,8 +32,8 @@
             this.btnAcessoRestrito = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnChamada = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -43,9 +43,9 @@
             this.btnIniciarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
             this.btnIniciarPedido.Font = new System.Drawing.Font("Arimo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.btnIniciarPedido.Location = new System.Drawing.Point(307, 20);
+            this.btnIniciarPedido.Location = new System.Drawing.Point(368, 24);
             this.btnIniciarPedido.Name = "btnIniciarPedido";
-            this.btnIniciarPedido.Size = new System.Drawing.Size(187, 55);
+            this.btnIniciarPedido.Size = new System.Drawing.Size(244, 89);
             this.btnIniciarPedido.TabIndex = 0;
             this.btnIniciarPedido.Text = "Iniciar Pedido";
             this.btnIniciarPedido.UseVisualStyleBackColor = false;
@@ -55,9 +55,9 @@
             // 
             this.btnAcessoRestrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
             this.btnAcessoRestrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.btnAcessoRestrito.Location = new System.Drawing.Point(699, 12);
+            this.btnAcessoRestrito.Location = new System.Drawing.Point(879, 0);
             this.btnAcessoRestrito.Name = "btnAcessoRestrito";
-            this.btnAcessoRestrito.Size = new System.Drawing.Size(89, 29);
+            this.btnAcessoRestrito.Size = new System.Drawing.Size(102, 50);
             this.btnAcessoRestrito.TabIndex = 1;
             this.btnAcessoRestrito.Text = "Acesso Restrito";
             this.btnAcessoRestrito.UseVisualStyleBackColor = false;
@@ -69,7 +69,7 @@
             this.panel1.Controls.Add(this.btnIniciarPedido);
             this.panel1.Location = new System.Drawing.Point(0, 268);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 97);
+            this.panel1.Size = new System.Drawing.Size(981, 139);
             this.panel1.TabIndex = 14;
             // 
             // label1
@@ -78,41 +78,41 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
             this.label1.Font = new System.Drawing.Font("Arimo", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(292, 168);
+            this.label1.Location = new System.Drawing.Point(382, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 41);
             this.label1.TabIndex = 16;
             this.label1.Text = "Projeto Cantina";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(294, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(213, 116);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnChamada
             // 
-            this.btnChamada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
+            this.btnChamada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
             this.btnChamada.Font = new System.Drawing.Font("Arimo", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChamada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.btnChamada.Location = new System.Drawing.Point(12, 15);
+            this.btnChamada.Location = new System.Drawing.Point(0, -4);
             this.btnChamada.Name = "btnChamada";
-            this.btnChamada.Size = new System.Drawing.Size(75, 23);
+            this.btnChamada.Size = new System.Drawing.Size(100, 54);
             this.btnChamada.TabIndex = 17;
             this.btnChamada.Text = "Chamada";
             this.btnChamada.UseVisualStyleBackColor = false;
             this.btnChamada.Click += new System.EventHandler(this.btnChamada_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(384, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(213, 116);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // MenuInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(980, 579);
             this.Controls.Add(this.btnChamada);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);

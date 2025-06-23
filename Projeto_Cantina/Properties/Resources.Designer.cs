@@ -63,6 +63,16 @@ namespace Projeto_Cantina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1365503 {
+            get {
+                object obj = ResourceManager.GetObject("1365503", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _600250 {
             get {
                 object obj = ResourceManager.GetObject("600250", resourceCulture);
@@ -86,6 +96,16 @@ namespace Projeto_Cantina.Properties {
         internal static System.Drawing.Bitmap _641695 {
             get {
                 object obj = ResourceManager.GetObject("641695", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66559_200 {
+            get {
+                object obj = ResourceManager.GetObject("66559-200", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,46 @@ namespace Projeto_Cantina.Properties {
         internal static System.Drawing.Bitmap Bolt_2024_pdf__11_ {
             get {
                 object obj = ResourceManager.GetObject("Bolt-2024.pdf (11)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bolt_2024_pdf__12_ {
+            get {
+                object obj = ResourceManager.GetObject("Bolt-2024.pdf (12)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bolt_2024_pdf__13_ {
+            get {
+                object obj = ResourceManager.GetObject("Bolt-2024.pdf (13)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bolt_2024_pdf__14_ {
+            get {
+                object obj = ResourceManager.GetObject("Bolt-2024.pdf (14)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bolt_2024_pdf__15_ {
+            get {
+                object obj = ResourceManager.GetObject("Bolt-2024.pdf (15)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +306,37 @@ namespace Projeto_Cantina.Properties {
         internal static System.Drawing.Bitmap Design_sem_nome {
             get {
                 object obj = ResourceManager.GetObject("Design sem nome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1291750007_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1291750007-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_take_out_cafe_fast_food_computer_icons_restaurant_symbol_miscellaneous_food_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-take-out-cafe-fast-food-computer-icons-restaurant-symbol-miscellaneou" +
+                        "s-food-thumbnail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

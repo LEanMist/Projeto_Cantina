@@ -23,7 +23,7 @@ namespace Projeto_Cantina
             var opcoes = new OpçoesPedido();
             if (opcoes.ShowDialog() == DialogResult.OK)
             {
-                var formPrincipal = new Form1();
+                var formPrincipal = new Cantina();
                 formPrincipal.TipoPedido = opcoes.TipoPedidoSelecionado;
                 formPrincipal.ShowDialog();
                 this.Show();

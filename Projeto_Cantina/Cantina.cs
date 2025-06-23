@@ -11,14 +11,14 @@ using Microsoft.VisualBasic;
 
 namespace Projeto_Cantina
 {
-    public partial class Form1 : Form
+    public partial class Cantina : Form
     {
         private Carrinho carrinho = new Carrinho();
         private List<Produtos> catalogo => GerenciadorProdutos.Catalogo;
 
         public string TipoPedido { get; set; } = "";
         private decimal troco = 0;
-        public Form1()
+        public Cantina()
         {
             InitializeComponent();
             this.ControlBox = false;
@@ -213,6 +213,11 @@ namespace Projeto_Cantina
             }
             
             ResetarPedido();
+        }
+
+        private void Cantina_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -72,11 +72,11 @@
     <Compile Include="Cozinha.Designer.cs">
       <DependentUpon>Cozinha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Cantina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Cantina.Designer.cs">
+      <DependentUpon>Cantina.cs</DependentUpon>
     </Compile>
     <Compile Include="Forma_de_Pagamento.cs">
       <SubType>Form</SubType>
@@ -138,8 +138,8 @@
     <EmbeddedResource Include="Cozinha.resx">
       <DependentUpon>Cozinha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Cantina.resx">
+      <DependentUpon>Cantina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forma_de_Pagamento.resx">
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
@@ -266,6 +266,33 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %2813%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %2814%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt-2024.pdf %2815%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1291750007-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-take-out-cafe-fast-food-computer-icons-restaurant-symbol-miscellaneous-food-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1365503.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66559-200.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
