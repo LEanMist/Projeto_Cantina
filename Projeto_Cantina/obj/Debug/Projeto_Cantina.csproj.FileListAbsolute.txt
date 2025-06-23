@@ -16,7 +16,6 @@ C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\bin\Debug\Projeto_Ca
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\bin\Debug\Projeto_Cantina.pdb
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.csproj.AssemblyReference.cache
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Balcão.resources
-C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Form1.resources
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Forma_de_Pagamento.resources
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.MenuInicial.resources
 C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.OpçoesPedido.resources
@@ -39,3 +38,5 @@ C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Ca
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Chamada.resources
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.ControleChamada.resources
 C:\Users\user\source\repos\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Cantina.resources
+C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.ControleChamada.resources
+C:\Users\25163461\Documents\Projeto_Cantina\Projeto_Cantina\obj\Debug\Projeto_Cantina.Cantina.resources

@@ -40,9 +40,9 @@
             this.btnEmPreparo = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,7 +113,7 @@
             this.ListaConcluidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
             this.ListaConcluidos.FormattingEnabled = true;
             this.ListaConcluidos.ItemHeight = 27;
-            this.ListaConcluidos.Location = new System.Drawing.Point(101, 318);
+            this.ListaConcluidos.Location = new System.Drawing.Point(101, 466);
             this.ListaConcluidos.Name = "ListaConcluidos";
             this.ListaConcluidos.Size = new System.Drawing.Size(564, 85);
             this.ListaConcluidos.TabIndex = 20;
@@ -138,7 +138,7 @@
             this.ListaEmPreparo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
             this.ListaEmPreparo.FormattingEnabled = true;
             this.ListaEmPreparo.ItemHeight = 27;
-            this.ListaEmPreparo.Location = new System.Drawing.Point(101, 466);
+            this.ListaEmPreparo.Location = new System.Drawing.Point(101, 318);
             this.ListaEmPreparo.Name = "ListaEmPreparo";
             this.ListaEmPreparo.Size = new System.Drawing.Size(564, 85);
             this.ListaEmPreparo.TabIndex = 22;
@@ -190,17 +190,6 @@
             this.panel1.Size = new System.Drawing.Size(983, 79);
             this.panel1.TabIndex = 26;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arimo", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(353, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 41);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Balcão de Pedidos";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf__12_;
@@ -220,6 +209,17 @@
             this.pictureBox1.Size = new System.Drawing.Size(107, 64);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arimo", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(353, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(276, 41);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Balcão de Pedidos";
             // 
             // Balcão
             // 

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ListaCozinha = new System.Windows.Forms.ListBox();
@@ -37,8 +39,6 @@
             this.btnConcluir = new System.Windows.Forms.Button();
             this.btnVoltarStatus = new System.Windows.Forms.Button();
             this.btnVoltarInicio = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,6 +54,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(981, 79);
             this.panel1.TabIndex = 15;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf__12_;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(860, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(107, 64);
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf__5_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(107, 64);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -83,7 +103,7 @@
             this.ListaCozinha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
             this.ListaCozinha.FormattingEnabled = true;
             this.ListaCozinha.ItemHeight = 27;
-            this.ListaCozinha.Location = new System.Drawing.Point(90, 412);
+            this.ListaCozinha.Location = new System.Drawing.Point(90, 194);
             this.ListaCozinha.Name = "ListaCozinha";
             this.ListaCozinha.Size = new System.Drawing.Size(578, 112);
             this.ListaCozinha.TabIndex = 20;
@@ -105,7 +125,7 @@
             this.ListaConcluidosCozinha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(12)))));
             this.ListaConcluidosCozinha.FormattingEnabled = true;
             this.ListaConcluidosCozinha.ItemHeight = 27;
-            this.ListaConcluidosCozinha.Location = new System.Drawing.Point(90, 208);
+            this.ListaConcluidosCozinha.Location = new System.Drawing.Point(90, 395);
             this.ListaConcluidosCozinha.Name = "ListaConcluidosCozinha";
             this.ListaConcluidosCozinha.Size = new System.Drawing.Size(578, 112);
             this.ListaConcluidosCozinha.TabIndex = 22;
@@ -148,26 +168,6 @@
             this.btnVoltarInicio.Text = "Voltar";
             this.btnVoltarInicio.UseVisualStyleBackColor = false;
             this.btnVoltarInicio.Click += new System.EventHandler(this.btnVoltarInicio_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf__12_;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(860, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(107, 64);
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Projeto_Cantina.Properties.Resources.Bolt_2024_pdf__5_;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(107, 64);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // Cozinha
             // 
