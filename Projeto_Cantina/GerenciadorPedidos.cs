@@ -16,10 +16,8 @@ namespace Projeto_Cantina
         public static List<Pedido> ClientesConcluidos { get; private set; } = new List<Pedido>();
         public static List<Pedido> ClientesPendentes { get; private set; } = new List<Pedido>();
 
-        public static bool PCozinha(Pedido pedido)
-        {
-            return pedido.Produtos.Any(p => p.Chapa);
-        }
+        public static int ContadorVoltarBalcao { get; set; } = 0;
+        public static int ContadorVoltarCozinha { get; set; } = 0;
         public static void PedidoEmPreparacao(Pedido pedido)
         {
             if (PedidosPendentes.Remove(pedido))
@@ -34,6 +32,7 @@ namespace Projeto_Cantina
             {
                 PedidosPendentes.Add(pedido);
                 PedidosCozinha.Remove(pedido);
+                ContadorVoltarBalcao++;
             }
         }
         public static void ConcluirPedido(Pedido pedido)
@@ -48,6 +47,7 @@ namespace Projeto_Cantina
             if (PedidosConcluidos.Remove(pedido))
             {
                 PedidosPendentes.Add(pedido);
+                ContadorVoltarBalcao++;
             }
         }
         public static void ConcluirNaCozinha(Pedido pedido)
@@ -66,6 +66,7 @@ namespace Projeto_Cantina
                 PedidosPreparacao.Add(pedido);
                 PedidosCozinha.Add(pedido);
                 PedidosConcluidos.Remove(pedido);
+                ContadorVoltarCozinha++;
             }
         }
         public static void RemoverDaLista(Pedido pedido)
@@ -76,6 +77,5 @@ namespace Projeto_Cantina
             PedidosCozinha.Remove(pedido);
             CozinhaConcluidos.Remove(pedido);
         }
-
     }
 }

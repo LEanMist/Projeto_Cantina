@@ -19,7 +19,7 @@ namespace Projeto_Cantina
 
         private void btnIniciarPedido_Click(object sender, EventArgs e)
         {
-            this.Hide(); // Esconde o menu inicial
+            this.Hide(); 
             var opcoes = new OpçoesPedido();
             if (opcoes.ShowDialog() == DialogResult.OK)
             {

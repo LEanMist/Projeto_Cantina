@@ -215,6 +215,30 @@ namespace Projeto_Cantina
             Gerenciador.ClearSelection();
             this.ActiveControl = null;
         }
+
+        private void btnIrHistorico_Click(object sender, EventArgs e)
+        {
+            if (precisaSalvarAntesDeSair)
+            {
+                var resposta = MessageBox.Show(
+                    "Existem alterações não salvas. Deseja continuar mesmo assim?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (resposta == DialogResult.No)
+                    return;
+
+                RestaurarEstado(estadoSalvo);
+                precisaSalvarAntesDeSair = false;
+            }
+
+            this.Hide();
+            HistoricoDePedidos historico = new HistoricoDePedidos();
+            historico.ShowDialog();
+
+            this.Show();
+        }
     }
 }
 

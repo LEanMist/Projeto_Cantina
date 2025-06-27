@@ -47,7 +47,7 @@ namespace Projeto_Cantina
             ListaCarrinho.Items.Clear();
             foreach (var prod in carrinho.Items)
             {
-                ListaCarrinho.Items.Add(prod); // ← adiciona o objeto
+                ListaCarrinho.Items.Add(prod); 
             }
         }
 
@@ -126,7 +126,7 @@ namespace Projeto_Cantina
                 else
                 {
                     this.Show();
-                    return null; // usuário cancelou
+                    return null; 
                 }
             }
         }
@@ -170,6 +170,7 @@ namespace Projeto_Cantina
                 FormadePagamento = forma
             };
 
+            GerenciadorHistorico.AdicionarAoHistorico(pedido);
 
             MessageBox.Show(resumo, "Confirmação");
             GerenciadorPedidos.PedidosPendentes.Add(pedido);
@@ -180,7 +181,7 @@ namespace Projeto_Cantina
 
         private void btnVoltarTipo_Click(object sender, EventArgs e)
         {
-            this.Hide();  // Esconde a tela da Cantina
+            this.Hide();  
 
             using (var opcoes = new OpçoesPedido())
             {
@@ -189,14 +190,13 @@ namespace Projeto_Cantina
                 if (resultado == DialogResult.OK)
                 {
                     TipoPedido = opcoes.TipoPedidoSelecionado;
-                    this.Show();  // Volta pra Cantina caso o usuário apenas troque o tipo
+                    this.Show();  
                     MessageBox.Show($"Novo tipo de pedido selecionado: {TipoPedido}", "Atualizado");
                 }
                 else if (resultado == DialogResult.Cancel)
                 {
-                    // O usuário quis voltar pro Menu Inicial
                     RestaurarEstoqueECancelarPedido();
-                    this.Close();  // Fecha a Cantina e volta pro Menu
+                    this.Close();  
                 }
             }
         }
@@ -208,16 +208,10 @@ namespace Projeto_Cantina
                 var produtoBase = catalogo.FirstOrDefault(p => p.Nome == item.Nome);
                 if (produtoBase != null)
                 {
-                    produtoBase.Estoque += item.Quantidade; // Restaura o estoque
+                    produtoBase.Estoque += item.Quantidade; 
                 }
-            }
-            
+            }     
             ResetarPedido();
-        }
-
-        private void Cantina_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

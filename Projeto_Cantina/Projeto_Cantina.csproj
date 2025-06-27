@@ -86,6 +86,13 @@
     </Compile>
     <Compile Include="GerenciadorPedidos.cs" />
     <Compile Include="GerenciadorProdutos.cs" />
+    <Compile Include="HistoricoDePedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoricoDePedidos.Designer.cs">
+      <DependentUpon>HistoricoDePedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Historicos.cs" />
     <Compile Include="LoginLoja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forma_de_Pagamento.resx">
       <DependentUpon>Forma_de_Pagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoDePedidos.resx">
+      <DependentUpon>HistoricoDePedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginLoja.resx">
       <DependentUpon>LoginLoja.cs</DependentUpon>
